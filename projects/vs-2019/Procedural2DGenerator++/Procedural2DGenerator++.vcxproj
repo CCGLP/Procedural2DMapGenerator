@@ -145,11 +145,16 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y "..\$(IntDir)Procedural2DGenerator++.dll" "..\TestAppCpp"
+xcopy /y "..\$(IntDir)Procedural2DGenerator++.dll" "..\TestAppCs"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\headers\Area.hpp" />
     <ClInclude Include="..\..\..\headers\BSPDungeon.hpp" />
     <ClInclude Include="..\..\..\headers\Corridor.hpp" />
+    <ClInclude Include="..\..\..\headers\DLLEntry.h" />
     <ClInclude Include="..\..\..\headers\DrunkardWalk.hpp" />
     <ClInclude Include="..\..\..\headers\Generator.hpp" />
     <ClInclude Include="..\..\..\headers\LineMap.hpp" />

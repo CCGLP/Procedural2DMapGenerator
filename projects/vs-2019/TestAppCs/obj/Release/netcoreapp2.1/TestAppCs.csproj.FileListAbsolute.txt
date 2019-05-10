@@ -1,0 +1,13 @@
+C:\Users\Carlos\source\repos\Procedural2DGenerator++\projects\vs-2019\TestAppCs\bin\Release\netcoreapp2.1\TestAppCs.deps.json
+C:\Users\Carlos\source\repos\Procedural2DGenerator++\projects\vs-2019\TestAppCs\bin\Release\netcoreapp2.1\TestAppCs.runtimeconfig.json
+C:\Users\Carlos\source\repos\Procedural2DGenerator++\projects\vs-2019\TestAppCs\bin\Release\netcoreapp2.1\TestAppCs.runtimeconfig.dev.json
+C:\Users\Carlos\source\repos\Procedural2DGenerator++\projects\vs-2019\TestAppCs\bin\Release\netcoreapp2.1\TestAppCs.dll
+C:\Users\Carlos\source\repos\Procedural2DGenerator++\projects\vs-2019\TestAppCs\bin\Release\netcoreapp2.1\TestAppCs.pdb
+C:\Users\Carlos\source\repos\Procedural2DGenerator++\projects\vs-2019\TestAppCs\bin\Release\netcoreapp2.1\Procedural2DGenerator++UnityBridge.dll
+C:\Users\Carlos\source\repos\Procedural2DGenerator++\projects\vs-2019\TestAppCs\obj\Release\netcoreapp2.1\TestAppCs.csprojAssemblyReference.cache
+C:\Users\Carlos\source\repos\Procedural2DGenerator++\projects\vs-2019\TestAppCs\obj\Release\netcoreapp2.1\TestAppCs.csproj.CoreCompileInputs.cache
+C:\Users\Carlos\source\repos\Procedural2DGenerator++\projects\vs-2019\TestAppCs\obj\Release\netcoreapp2.1\TestAppCs.AssemblyInfoInputs.cache
+C:\Users\Carlos\source\repos\Procedural2DGenerator++\projects\vs-2019\TestAppCs\obj\Release\netcoreapp2.1\TestAppCs.AssemblyInfo.cs
+C:\Users\Carlos\source\repos\Procedural2DGenerator++\projects\vs-2019\TestAppCs\obj\Release\netcoreapp2.1\TestAppCs.csproj.CopyComplete
+C:\Users\Carlos\source\repos\Procedural2DGenerator++\projects\vs-2019\TestAppCs\obj\Release\netcoreapp2.1\TestAppCs.dll
+C:\Users\Carlos\source\repos\Procedural2DGenerator++\projects\vs-2019\TestAppCs\obj\Release\netcoreapp2.1\TestAppCs.pdb

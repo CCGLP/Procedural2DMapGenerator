@@ -1,5 +1,5 @@
 ﻿using System;
-
+using Procedural2DGenerator; 
 namespace TestAppCs
 {
     class Program
@@ -7,6 +7,7 @@ namespace TestAppCs
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            AreaUnsafe area = Procedural2DHelper.CreateArea(30, 30, 2, 2); 
         }
     }
 }

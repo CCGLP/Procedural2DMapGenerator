@@ -36,6 +36,9 @@
     <ClInclude Include="..\..\..\headers\BSPDungeon.hpp">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\headers\DLLEntry.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\code\cpp\DLLEntry.cpp">

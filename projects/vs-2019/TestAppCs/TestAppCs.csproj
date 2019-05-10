@@ -5,4 +5,10 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="Procedural2DGenerator++UnityBridge">
+      <HintPath>Procedural2DGenerator++UnityBridge.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

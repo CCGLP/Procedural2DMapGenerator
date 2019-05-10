@@ -1,0 +1,6 @@
+C:\Users\Carlos\source\repos\Procedural2DGenerator++\projects\vs-2019\Procedural2DGenerator++UnityBridge\bin\Release\Procedural2DGenerator++UnityBridge.dll
+C:\Users\Carlos\source\repos\Procedural2DGenerator++\projects\vs-2019\Procedural2DGenerator++UnityBridge\bin\Release\Procedural2DGenerator++UnityBridge.pdb
+C:\Users\Carlos\source\repos\Procedural2DGenerator++\projects\vs-2019\Procedural2DGenerator++UnityBridge\obj\Release\Procedural2DGenerator++UnityBridge.csprojAssemblyReference.cache
+C:\Users\Carlos\source\repos\Procedural2DGenerator++\projects\vs-2019\Procedural2DGenerator++UnityBridge\obj\Release\Procedural2DGenerator++UnityBridge.csproj.CoreCompileInputs.cache
+C:\Users\Carlos\source\repos\Procedural2DGenerator++\projects\vs-2019\Procedural2DGenerator++UnityBridge\obj\Release\Procedural2DGenerator++UnityBridge.dll
+C:\Users\Carlos\source\repos\Procedural2DGenerator++\projects\vs-2019\Procedural2DGenerator++UnityBridge\obj\Release\Procedural2DGenerator++UnityBridge.pdb
