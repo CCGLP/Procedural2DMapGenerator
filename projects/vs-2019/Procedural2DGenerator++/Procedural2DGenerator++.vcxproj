@@ -81,6 +81,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath); ..\..\headers</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -158,6 +159,7 @@ xcopy /y "..\$(IntDir)Procedural2DGenerator++.dll" "..\TestAppCs"</Command>
     <ClInclude Include="..\..\..\headers\DrunkardWalk.hpp" />
     <ClInclude Include="..\..\..\headers\Generator.hpp" />
     <ClInclude Include="..\..\..\headers\LineMap.hpp" />
+    <ClInclude Include="..\..\..\headers\RandomNoise.hpp" />
     <ClInclude Include="..\..\..\headers\Room.hpp" />
   </ItemGroup>
   <ItemGroup>
@@ -168,6 +170,7 @@ xcopy /y "..\$(IntDir)Procedural2DGenerator++.dll" "..\TestAppCs"</Command>
     <ClCompile Include="..\..\..\code\cpp\DrunkardWalk.cpp" />
     <ClCompile Include="..\..\..\code\cpp\Generator.cpp" />
     <ClCompile Include="..\..\..\code\cpp\LineMap.cpp" />
+    <ClCompile Include="..\..\..\code\cpp\RandomNoise.cpp" />
     <ClCompile Include="..\..\..\code\cpp\Room.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

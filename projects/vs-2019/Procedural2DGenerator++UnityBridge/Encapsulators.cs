@@ -12,20 +12,26 @@ namespace Procedural2DGenerator
 
     public class Procedural2DHelper
     {
-        unsafe private class AreaUnsafe
+        unsafe private struct AreaUnsafe
         {
             public int x, y;
             public int** tileInfo;
             public int width;
             public int height;
-            public AreaUnsafe[] areas;
+            public AreaUnsafe* areas;
             public int areasCount;
         }
         
 
         [DllImport("Procedural2DGenerator++", EntryPoint = "createEmptySharpArea")]
-       private static extern AreaUnsafe CreateUnsafeArea(int width, int height, int x, int y); 
-        
+       private static extern AreaUnsafe CreateUnsafeArea(int width, int height, int x, int y);
+
+        [DllImport("Procedural2DGenerator++", EntryPoint = "createRandomNoiseSharpArea")]
+        private static extern AreaUnsafe CreateUnsafeRandomArea(int width, int height, int x, int y);
+        [DllImport("Procedural2DGenerator++", EntryPoint = "generateRandomNoiseInSharpArea")]
+        private static extern AreaUnsafe GenerateRandomAreaInUnsafe(AreaUnsafe area);
+
+
         public static Area CreateArea(int width, int height, int x, int y)
         {
             AreaUnsafe uArea = CreateUnsafeArea(width, height, x, y);
@@ -55,7 +61,32 @@ namespace Procedural2DGenerator
 
             return area; 
         }
+        private unsafe static AreaUnsafe ConvertSafeToUnsafe(Area area) //TODO, need a constructor that initialices some empty children areas.
+        {
+            AreaUnsafe uArea = CreateUnsafeArea(area.tileInfo.GetLength(0), area.tileInfo.GetLength(1), area.x, area.y); 
+           
+            for (int i = 0; i <uArea.width; i++)
+            {
+                for (int j = 0; j<uArea.height; j++)
+                {
+                    uArea.tileInfo[i][j] = area.tileInfo[i, j]; 
+                }
+            }
+            return uArea; 
+        }
 
+        public static Area CreateRandomNoiseArea(int width, int height, int x, int y)
+        {
+            AreaUnsafe areaUnsafe = CreateUnsafeRandomArea(width, height, x, y);
+            return ConvertUnsafeToSafe(areaUnsafe); 
+        }
+
+        public static Area GenerateRandomNoiseInArea(Area area)
+        {
+            AreaUnsafe unsafeArea = ConvertSafeToUnsafe(area);
+            unsafeArea = GenerateRandomAreaInUnsafe(unsafeArea);
+            return ConvertUnsafeToSafe(unsafeArea); 
+        }
 
     }
 
