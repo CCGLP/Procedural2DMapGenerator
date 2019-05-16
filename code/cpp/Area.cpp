@@ -1,28 +1,8 @@
 #include "..\..\headers\Area.hpp"
 
+using namespace std; 
 
 
-Area::Area(const AreaSharpFriendly sharpArea)
-{
-	this->x = sharpArea.x; 
-	this->y = sharpArea.y; 
-	this->width = sharpArea.width; 
-	this->height = sharpArea.height; 
-
-	this->tileInfo = new int* [width]; 
-	for (int i = 0; i < width; i++) {
-		this->tileInfo[i] = new int[height]; 
-		for (int j = 0; j < height; j++) {
-			this->tileInfo[i][j] = sharpArea.tileInfo[i][j]; 
-		}
-	}
-
-	this->areas = new vector<Area>(); 
-	for (int i = 0; i < sharpArea.areasCount; i++) {
-		this->areas->push_back(sharpArea.areas[i]); 
-	}
-
-}
 
 Area::Area(int width, int height, int x, int y)
 {
@@ -32,7 +12,7 @@ Area::Area(int width, int height, int x, int y)
 	this->x = x; 
 	this->y = y; 
 
-	this->areas = new vector<Area>(); 
+	this->areasSize = 0; 
 
 	this->tileInfo = new int* [width]; 
 	for (int i = 0; i < width; i++) {
@@ -58,20 +38,20 @@ Area::Area(const Area& other)
 		}
 	}
 
-	this->areas = new vector<Area>();
-	for (int i = 0; i < other.areas->size(); i++) {
-		this->areas->push_back(other.areas->at(i));
+	this->areasSize = other.areasSize; 
+
+	for (int i = 0; i < other.areasSize; i++) {
+		this->areas = other.areas;
 	}
 
 }
 
 
-
-
+/*
 int** Area::processArea()
 {
-	for (int i = 0; i < areas->size(); i++) {
-		Area area = areas->at(i); 
+	for (int i = 0; i < areasSize; i++) {
+		Area area = *(areas[i]);
 		int** areaChild = area.processArea();
 		int areaWidth = area.x + area.width; 
 		int areaHeight = area.y + area.height; 
@@ -87,30 +67,4 @@ int** Area::processArea()
 
 }
 
-const AreaSharpFriendly Area::convertToSharp()
-{
-	AreaSharpFriendly area; 
-	area.x = x; 
-	area.y = y; 
-
-	area.tileInfo = new int* [width]; 
-	for (int i = 0; i < width; i++) {
-		area.tileInfo[i] = new int[height]; 
-		for (int j = 0; j < height; j++) {
-			area.tileInfo[i][j] = tileInfo[i][j]; 
-		}
-	}
-
-	area.width = width; 
-	area.height = height; 
-
-	area.areas = new AreaSharpFriendly[areas->size()]; 
-	for (int i = 0; i < areas->size(); i++) {
-		area.areas[i] = areas->at(i).convertToSharp(); 
-	}
-
-	area.areasCount = areas->size(); 
-
-	return area; 
-	
-}
+*/ 

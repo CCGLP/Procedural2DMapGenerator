@@ -1,37 +1,43 @@
 #include <stdio.h>
 #include "DLLEntry.h"
 #include <time.h>
-
+#include <iostream>
+#include <Room.hpp>
 using namespace std; 
+
+int pepe(); 
 
 int main() {
 
-	Area* area = createEmptyArea(40,40); 
+	int je; 
 
-	srand(time(0)); 
+	cin >> je; 
+	cout << sizeof(Area) << endl; 
+	cout << sizeof(OtherArea) << endl; 
+	cout << sizeof(Room) << endl; 
 	
-	for (int i = 0; i < area->getWidth(); i++) {
-		for (int j = 0; j < area->getHeight(); j++) {
-			(*area)[i][j] = rand() %100; 
-			printf("%i , ", (*area)[i][j]);
-		}
-	}
-
+	pepe(); 
 	
-
-
-	printf("Hola"); 
-	int* p = new int[3]; 
-
-	int i = 0; 
-	for (int* x = p;i < 3; x++, i++) {
-		*x = 2; 
-	}
-
-	printf("HEy"); 
-	for (int* x = p, i = 0; i < 3; x++, i++) {
-		printf("Hola bunas tardes: %i", (*x)); 
-	}
 
 	return 1; 
+}
+
+
+int pepe() {
+
+	Area* area = createDrunkardWalkArea(500, 500, 0, 0, 100000);
+	for (int j = 0; j < area->getHeight(); j++) {
+		for (int x = 0; x < area->getWidth(); x++) {
+			printf("%i", (*area)[x][j]);
+		}
+
+		printf("\n");
+	}
+	
+	int x;
+	cin >> x;
+
+	//delete area; 
+	destroyArea(area); 
+	return 9; 
 }

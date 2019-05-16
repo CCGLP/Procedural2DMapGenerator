@@ -1,15 +1,22 @@
 #include "..\..\headers\DLLEntry.h"
 #include "..\..\headers\RandomNoise.hpp"
+#include "..\..\headers\DrunkardWalk.hpp"
+
+PROCEDURAL_2D_API void destroyArea(Area* area)
+{
+	delete area; 
+}
+
+
 
 PROCEDURAL_2D_API Area* createEmptyArea(int width, int height, int x, int y)
 {
-	return new Area(width, height, x, y); 
+	Area* area = new Area(width, height, x, y); 
+	return area; 
+
 }
 
-PROCEDURAL_2D_API AreaSharpFriendly createEmptySharpArea(int width, int height, int x, int y) {
-	Area area(width, height, x, y); 
-	return area.convertToSharp(); 
-}
+
 
 PROCEDURAL_2D_API Area* createRandomNoiseArea(int width, int height, int x, int y)
 {
@@ -24,15 +31,19 @@ PROCEDURAL_2D_API void generateRandomNoiseInArea(Area* area)
 	noise.generate(area);
 }
 
-PROCEDURAL_2D_API AreaSharpFriendly createRandomNoiseSharpArea(int width, int height, int x, int y)
+
+
+PROCEDURAL_2D_API Area* createDrunkardWalkArea(int width, int height, int x, int y, int iterations)
 {
-	AreaSharpFriendly area = createEmptySharpArea(width, height, x, y); 
-	return generateRandomNoiseInSharpArea(area); 
+	Area* area  = createEmptyArea(width, height, x, y);
+	generateDrunkardWalkInArea(area, iterations);
+	return area;
 }
 
-PROCEDURAL_2D_API AreaSharpFriendly generateRandomNoiseInSharpArea(AreaSharpFriendly area)
+PROCEDURAL_2D_API void generateDrunkardWalkInArea(Area* area, int iterations)
 {
-	Area* areaC = new Area(area);
-	generateRandomNoiseInArea(areaC);
-	return areaC->convertToSharp();
+	DrunkardWalk generator(iterations); 
+	generator.generate(area); 
 }
+
+

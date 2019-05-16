@@ -1,38 +1,56 @@
 #pragma once
 #include <vector>
-
+#include <iostream>
 using namespace std; 
 
-struct AreaSharpFriendly {
+
+struct OtherArea {
 public:
 	int x, y;
 	int** tileInfo;
-	int width;
+	int width; 
 	int height;
-	AreaSharpFriendly* areas;
-	size_t areasCount; 
+	OtherArea** areas;
+	int areasSize;
+
 };
 
-class Area {
-	protected:
+struct Area {
+	public:
 		// Position of the area (If is inside another area position will matter) 
 		int x, y; 
 
 		int** tileInfo;
 		int width;
 		int height;
-		vector<Area>* areas; 
+		Area** areas; 
+		int areasSize;
 
 	private: 
 		Area() {};
 
 	public: 
-		Area(const AreaSharpFriendly sharpArea);
 		Area(int width, int height, int x = 0, int y = 0); 
 		Area(const Area& other); 
+		~Area() {
+			cout << "Deleting memory............" << endl;
+			for (int i = 0; i < width; i++) {
+				delete[] tileInfo[i];
+			}
+
+			delete[] tileInfo;
+
+
+			for (int i = 0; i < areasSize; i++) {
+				delete areas[i]; 
+			}
+			delete[] areas; 
+			
+
+		};
 
 		///Changes tileInfo based on child Areas. 
-		virtual int** processArea();
+		//virtual int** processArea();
 
 		int* operator[](const int index) {
 			return tileInfo[index]; 
@@ -57,13 +75,18 @@ class Area {
 
 
 		void addArea(int width, int height, int x, int y) {
-			areas->push_back(Area(width, height, x, y)); 
+			Area** newAreas = new Area*[areasSize+1]; 
+			int i; 
+			for (i = 0;  i < areasSize; i++) {
+				newAreas[i] = areas[i]; 
+			}
+			newAreas[i] = new Area(width, height, x, y);
+			areasSize++;
 		}
-		vector<Area>* getChildren() {
+		Area** getChildren() {
 			return areas; 
 		}
 
-		const AreaSharpFriendly convertToSharp(); 
 
 };
 

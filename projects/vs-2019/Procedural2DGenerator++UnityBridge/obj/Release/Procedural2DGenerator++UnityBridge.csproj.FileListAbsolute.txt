@@ -10,3 +10,5 @@ D:\Miscelanea\Procedural2DMapGenerator\projects\vs-2019\Procedural2DGenerator++U
 D:\Miscelanea\Procedural2DMapGenerator\projects\vs-2019\Procedural2DGenerator++UnityBridge\obj\Release\Procedural2DGenerator++UnityBridge.dll
 D:\Miscelanea\Procedural2DMapGenerator\projects\vs-2019\Procedural2DGenerator++UnityBridge\obj\Release\Procedural2DGenerator++UnityBridge.pdb
 D:\Miscelanea\Procedural2DMapGenerator\projects\vs-2019\Procedural2DGenerator++UnityBridge\obj\Release\Procedural2DGenerator++UnityBridge.csprojAssemblyReference.cache
+C:\Users\Carlos\source\repos\Procedural2DGenerator++\projects\vs-2019\Procedural2DGenerator++UnityBridge\bin\Release\UnityEngine.dll
+C:\Users\Carlos\source\repos\Procedural2DGenerator++\projects\vs-2019\Procedural2DGenerator++UnityBridge\obj\Release\Procedural2DGenerator++UnityBridge.csproj.CopyComplete

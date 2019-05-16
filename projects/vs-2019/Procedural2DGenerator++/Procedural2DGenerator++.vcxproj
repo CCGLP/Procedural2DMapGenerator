@@ -104,6 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;PROCEDURAL2DGENERATOR_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>..\..\headers</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -138,6 +139,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;PROCEDURAL2DGENERATOR_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>..\..\headers</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -148,7 +150,8 @@
     </Link>
     <PostBuildEvent>
       <Command>xcopy /y "..\$(IntDir)Procedural2DGenerator++.dll" "..\TestAppCpp"
-xcopy /y "..\$(IntDir)Procedural2DGenerator++.dll" "..\TestAppCs"</Command>
+xcopy /y "..\$(IntDir)Procedural2DGenerator++.dll" "..\TestAppCs"
+xcopy /y "..\$(IntDir)Procedural2DGenerator++.dll" "..\..\..\UnityTestProject\Assets\Plugins"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
