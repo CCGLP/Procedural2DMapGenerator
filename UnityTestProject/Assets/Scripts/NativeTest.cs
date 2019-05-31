@@ -36,11 +36,17 @@ public class NativeTest : MonoBehaviour
         watch.Reset();
         
         watch.Start();
+
+
         for (int i = 0; i < 1; i++)
         {
             var b = GenerateAreaDrunkardWalk();
         }
+
+
         watch.Stop(); 
+
+
         UnityEngine.Debug.Log("TIME C#: " + watch.ElapsedMilliseconds);
 
         var map = Procedural2DHelper.CreateDrunkardWalkArea(100, 100, 0, 0, 1000);

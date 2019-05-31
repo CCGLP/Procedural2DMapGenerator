@@ -4,16 +4,6 @@
 using namespace std; 
 
 
-struct OtherArea {
-public:
-	int x, y;
-	int** tileInfo;
-	int width; 
-	int height;
-	OtherArea** areas;
-	int areasSize;
-
-};
 
 struct Area {
 	public:
@@ -50,7 +40,7 @@ struct Area {
 		};
 
 		///Changes tileInfo based on child Areas. 
-		//virtual int** processArea();
+		void processArea();
 
 		int* operator[](const int index) {
 			return tileInfo[index]; 
@@ -74,14 +64,16 @@ struct Area {
 
 
 
-		void addArea(int width, int height, int x, int y) {
-			Area** newAreas = new Area*[areasSize+1]; 
+		Area* addArea(int width, int height, int x, int y) {
+			Area** newAreas = new Area*[(areasSize+1)]; 
 			int i; 
 			for (i = 0;  i < areasSize; i++) {
 				newAreas[i] = areas[i]; 
 			}
 			newAreas[i] = new Area(width, height, x, y);
 			areasSize++;
+			areas = newAreas; 
+			return newAreas[i]; 
 		}
 		Area** getChildren() {
 			return areas; 

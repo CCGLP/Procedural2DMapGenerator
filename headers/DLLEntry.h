@@ -20,6 +20,10 @@ extern "C" {
 	PROCEDURAL_2D_API Area* createDrunkardWalkArea(int width, int height, int x = 0, int y = 0, int iterations = 10000);
 	PROCEDURAL_2D_API void generateDrunkardWalkInArea(Area* area, int iterations = 10000);
 
+
+	//BSPDungeon 
+	PROCEDURAL_2D_API Area* createBSPDungeonArea(int width, int height, int x = 0, int y = 0);
+	PROCEDURAL_2D_API void generateBSPDungeonInArea(Area* area);
 }
 
 

@@ -1,6 +1,7 @@
 #include "..\..\headers\DLLEntry.h"
 #include "..\..\headers\RandomNoise.hpp"
 #include "..\..\headers\DrunkardWalk.hpp"
+#include "..\..\headers\BSPDungeon.hpp"
 
 PROCEDURAL_2D_API void destroyArea(Area* area)
 {
@@ -20,7 +21,8 @@ PROCEDURAL_2D_API Area* createEmptyArea(int width, int height, int x, int y)
 
 PROCEDURAL_2D_API Area* createRandomNoiseArea(int width, int height, int x, int y)
 {
-	Area* area = createEmptyArea(width, height, x, y); 
+	Area* area = createEmptyArea
+	(width, height, x, y); 
 	generateRandomNoiseInArea(area); 
 	return area; 
 }
@@ -43,6 +45,19 @@ PROCEDURAL_2D_API Area* createDrunkardWalkArea(int width, int height, int x, int
 PROCEDURAL_2D_API void generateDrunkardWalkInArea(Area* area, int iterations)
 {
 	DrunkardWalk generator(iterations); 
+	generator.generate(area); 
+}
+
+PROCEDURAL_2D_API Area* createBSPDungeonArea(int width, int height, int x, int y)
+{
+	Area* area = createEmptyArea(width, height, x, y); 
+	generateBSPDungeonInArea(area); 
+	return area; 
+}
+
+PROCEDURAL_2D_API void generateBSPDungeonInArea(Area* area)
+{
+	BSPDungeon generator;
 	generator.generate(area); 
 }
 

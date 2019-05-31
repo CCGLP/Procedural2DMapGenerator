@@ -13,4 +13,5 @@ xsi:schemaLocation="
 "
 >
     <engine:Label text="Hello World! From UXML" />
+  <engine:Button name="Roberto" text="HOLA"></engine:Button>/>
 </engine:UXML>

@@ -1,5 +1,5 @@
 #include "..\..\headers\Area.hpp"
-
+#include <iostream>
 using namespace std; 
 
 
@@ -47,24 +47,30 @@ Area::Area(const Area& other)
 }
 
 
-/*
-int** Area::processArea()
-{
-	for (int i = 0; i < areasSize; i++) {
-		Area area = *(areas[i]);
-		int** areaChild = area.processArea();
-		int areaWidth = area.x + area.width; 
-		int areaHeight = area.y + area.height; 
 
-		for (int x = area.x; x < areaWidth; x++) {
-			for (int y = area.y; y < areaHeight; y++) {
-				tileInfo[x][y] = areaChild[x][y]; 
+void Area::processArea()
+{
+	cout << "Processing area" << endl; 
+	for (int i = 0; i < areasSize; i++) {
+		Area* area = (areas[i]);
+		int areaWidth = area->x + area->width;
+		int areaHeight = area->y + area->height;
+
+		if (area->areasSize > 0) {
+			area->processArea(); 
+		}
+
+		int p; 
+		int j;
+		for (int x = area->x, p = 0; x < areaWidth; x++,p ++) { // 200x - 500y   Area 1     500w 500h   
+			for (int y = area->y, j = 0; y < areaHeight; y++, j++) {//600x - 800y AreaChild  100w 200h    
+				tileInfo[x-this->x][y-this->y] = (*area)[p][j]; 
 			}
+		/*	j = 0;
+			p++; */
 		}
 	}
 
-	return tileInfo;
 
 }
 
-*/ 

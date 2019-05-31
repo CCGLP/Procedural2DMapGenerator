@@ -13,7 +13,6 @@ int main() {
 
 	cin >> je; 
 	cout << sizeof(Area) << endl; 
-	cout << sizeof(OtherArea) << endl; 
 	cout << sizeof(Room) << endl; 
 	
 	pepe(); 
@@ -25,13 +24,14 @@ int main() {
 
 int pepe() {
 
-	Area* area = createDrunkardWalkArea(500, 500, 0, 0, 100000);
+	Area* area = createBSPDungeonArea(1000, 1000); 
 	for (int j = 0; j < area->getHeight(); j++) {
 		for (int x = 0; x < area->getWidth(); x++) {
-			printf("%i", (*area)[x][j]);
+			if ((*area)[x][j] == 0)
+				printf("%i", (*area)[x][j]);
 		}
 
-		printf("\n");
+		//printf("\n");
 	}
 	
 	int x;
