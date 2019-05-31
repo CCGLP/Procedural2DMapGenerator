@@ -25,7 +25,7 @@ public class NativeTest : MonoBehaviour
         // a = Procedural2DHelper.GenerateDrunkardWalkInArea(a);
         for (int i = 0; i < 1; i++)
         {
-           var a = Procedural2DHelper.CreateDrunkardWalkArea(1000, 1000, 0, 0, 100000);
+           var a = Procedural2DHelper.CreateBSPDungeonArea(1000, 1000, 0, 0);
         }
         watch.Stop();
 

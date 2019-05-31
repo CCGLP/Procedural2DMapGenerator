@@ -122,9 +122,7 @@ namespace Procedural2DGenerator
 
         public unsafe static Area CreateDrunkardWalkArea(int width, int height, int x = 0, int y = 0, int iterations = 10000)
         {
-            Debug.Log("QUE COÑO PASA"); 
             AreaUnsafe* areaUnsafe = CreateUnsafeDrunkardArea(width, height, x, y, iterations);
-            Debug.Log("HOLA BUENAS TARDES"); 
             return ConvertUnsafeToSafe(areaUnsafe);
         }
 
