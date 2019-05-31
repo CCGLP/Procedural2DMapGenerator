@@ -9,16 +9,11 @@ int pepe();
 
 int main() {
 
-	int je; 
-
-	cin >> je; 
-	cout << sizeof(Area) << endl; 
-	cout << sizeof(Room) << endl; 
 	
 	pepe(); 
 	
 
-	return 1; 
+	return 0; 
 }
 
 
@@ -35,7 +30,6 @@ int pepe() {
 	}
 	
 	int x;
-	cin >> x;
 
 	//delete area; 
 	destroyArea(area); 

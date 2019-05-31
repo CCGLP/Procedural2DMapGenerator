@@ -1,30 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Carlos\\source\\repos\\Procedural2DGenerator++\\projects\\vs-2019\\TestAppCs\\TestAppCs.csproj": {}
+    "D:\\Miscelanea\\Procedural2DMapGenerator\\projects\\vs-2019\\TestAppCs\\TestAppCs.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Carlos\\source\\repos\\Procedural2DGenerator++\\projects\\vs-2019\\TestAppCs\\TestAppCs.csproj": {
+    "D:\\Miscelanea\\Procedural2DMapGenerator\\projects\\vs-2019\\TestAppCs\\TestAppCs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Carlos\\source\\repos\\Procedural2DGenerator++\\projects\\vs-2019\\TestAppCs\\TestAppCs.csproj",
+        "projectUniqueName": "D:\\Miscelanea\\Procedural2DMapGenerator\\projects\\vs-2019\\TestAppCs\\TestAppCs.csproj",
         "projectName": "TestAppCs",
-        "projectPath": "C:\\Users\\Carlos\\source\\repos\\Procedural2DGenerator++\\projects\\vs-2019\\TestAppCs\\TestAppCs.csproj",
-        "packagesPath": "C:\\Users\\Carlos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Carlos\\source\\repos\\Procedural2DGenerator++\\projects\\vs-2019\\TestAppCs\\obj\\",
+        "projectPath": "D:\\Miscelanea\\Procedural2DMapGenerator\\projects\\vs-2019\\TestAppCs\\TestAppCs.csproj",
+        "packagesPath": "C:\\Users\\ccglp\\.nuget\\packages\\",
+        "outputPath": "D:\\Miscelanea\\Procedural2DMapGenerator\\projects\\vs-2019\\TestAppCs\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Carlos\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\ccglp\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

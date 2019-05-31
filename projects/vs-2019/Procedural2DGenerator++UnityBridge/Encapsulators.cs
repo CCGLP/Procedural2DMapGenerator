@@ -13,7 +13,7 @@ namespace Procedural2DGenerator
     // TODO GENERAR TODO DESDE UNA STRUCT VACIA, GANO MUCHO MAS SI ME OLVIDO DE
     // ENCAPSULAR LAS AREAS DE LOS COJONES
 
-        //OTRA IDEA Es que si una clase hereda de una struct puede ocupar ese espacio
+    //OTRA IDEA Es que si una clase hereda de una struct puede ocupar ese espacio
     public class Procedural2DHelper
     {
         [StructLayout(LayoutKind.Sequential)]
@@ -27,16 +27,16 @@ namespace Procedural2DGenerator
             public AreaUnsafe** areas;
             public int areasCount;
 
-            
+
         }
 
 
 
 
         [DllImport("Procedural2DGenerator++", EntryPoint = "destroyArea")]
-        private unsafe static extern void DestroyAreaUnsafe(AreaUnsafe* area); 
+        private unsafe static extern void DestroyAreaUnsafe(AreaUnsafe* area);
         [DllImport("Procedural2DGenerator++", EntryPoint = "createEmptyArea")]
-       private unsafe static extern AreaUnsafe* CreateUnsafeArea(int width, int height, int x, int y);
+        private unsafe static extern AreaUnsafe* CreateUnsafeArea(int width, int height, int x, int y);
 
         [DllImport("Procedural2DGenerator++", EntryPoint = "createRandomNoiseArea")]
         private unsafe static extern AreaUnsafe* CreateUnsafeRandomArea(int width, int height, int x, int y);
@@ -50,74 +50,82 @@ namespace Procedural2DGenerator
         private unsafe static extern AreaUnsafe* CreateUnsafeDrunkardArea(int width, int height, int x, int y, int iterations = 10000);
 
 
+        [DllImport("Procedural2DGenerator++", EntryPoint = "createBSPDungeonArea")]
+        private unsafe static extern AreaUnsafe* CreateUnsafeBSPDungeonArea(int width, int height, int x, int y);
+
+        [DllImport("Procedural2DGenerator++", EntryPoint = "generateBSPDungeonInArea")]
+        private unsafe static extern void GenerateBSPDungeonAreaUnsafe(AreaUnsafe* area);
+
 
         public unsafe static Area CreateArea(int width, int height, int x, int y)
         {
             AreaUnsafe* uArea = CreateUnsafeArea(width, height, x, y);
-
-            return ConvertUnsafeToSafe(uArea); 
+           
+            return ConvertUnsafeToSafe(uArea);
         }
 
         private unsafe static Area ConvertUnsafeToSafe(AreaUnsafe* uArea)
         {
             Area area = new Area();
-           
+
             area.x = uArea->x;
             area.y = uArea->y;
 
             area.tileInfo = new int[uArea->width, uArea->height];
 
-            for (int i = 0; i< uArea->width; i++)
+            for (int i = 0; i < uArea->width; i++)
             {
-                for (int j = 0; j< uArea->height; j++)
+                for (int j = 0; j < uArea->height; j++)
                 {
-                    area.tileInfo[i, j] = uArea->tileInfo[i][j]; 
+                    area.tileInfo[i, j] = uArea->tileInfo[i][j];
                 }
             }
 
 
             area.areas = new Area[uArea->areasCount];
 
-            for (int i = 0; i< uArea->areasCount; i++)
+            for (int i = 0; i < uArea->areasCount; i++)
             {
-                area.areas[i] = ConvertUnsafeToSafe(uArea->areas[i]); 
+                area.areas[i] = ConvertUnsafeToSafe(uArea->areas[i]);
             }
 
             DestroyAreaUnsafe(uArea);
 
-            return area; 
+            return area;
         }
 
         private unsafe static AreaUnsafe* ConvertSafeToUnsafe(Area area) //TODO, need a constructor that initialices some empty children areas.
         {
             AreaUnsafe* uArea = CreateUnsafeArea(area.tileInfo.GetLength(0), area.tileInfo.GetLength(1), area.x, area.y);
-            for (int i = 0; i <uArea->width; i++)
+            for (int i = 0; i < uArea->width; i++)
             {
-                for (int j = 0; j<uArea->height; j++)
+                for (int j = 0; j < uArea->height; j++)
                 {
-                    uArea->tileInfo[i][j] = area.tileInfo[i, j]; 
+                    uArea->tileInfo[i][j] = area.tileInfo[i, j];
                 }
             }
-            return uArea; 
+            return uArea;
         }
 
         public unsafe static Area CreateRandomNoiseArea(int width, int height, int x, int y)
         {
             AreaUnsafe* areaUnsafe = CreateUnsafeRandomArea(width, height, x, y);
-            return ConvertUnsafeToSafe(areaUnsafe); 
+            return ConvertUnsafeToSafe(areaUnsafe);
         }
 
         public unsafe static Area GenerateRandomNoiseInArea(Area area)
         {
             AreaUnsafe* unsafeArea = ConvertSafeToUnsafe(area);
             GenerateRandomAreaInUnsafe(unsafeArea);
-            return ConvertUnsafeToSafe(unsafeArea); 
+            return ConvertUnsafeToSafe(unsafeArea);
         }
 
         public unsafe static Area CreateDrunkardWalkArea(int width, int height, int x = 0, int y = 0, int iterations = 10000)
         {
+            Debug.Log("QUE COÑO PASA"); 
             AreaUnsafe* areaUnsafe = CreateUnsafeDrunkardArea(width, height, x, y, iterations);
-            return ConvertUnsafeToSafe(areaUnsafe); 
+            Debug.Log("HOLA BUENAS TARDES"); 
+            return ConvertUnsafeToSafe(areaUnsafe);
         }
 
         public unsafe static Area GenerateDrunkardWalkInArea(Area area)
@@ -127,7 +135,13 @@ namespace Procedural2DGenerator
             return ConvertUnsafeToSafe(unsafeArea);
         }
 
+        public unsafe static Area CreateBSPDungeonArea(int width, int height, int x = 0, int y = 0)
+        {
+            AreaUnsafe* areaUnsafe = CreateUnsafeBSPDungeonArea(width, height, x, y);
+            return ConvertUnsafeToSafe(areaUnsafe); 
+        }
 
+        //TODO Generate In Area BSP
     }
 
     public struct Area

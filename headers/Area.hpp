@@ -29,13 +29,15 @@ struct Area {
 			}
 
 			delete[] tileInfo;
+			cout << ".............................Deleted tiles" << endl;
 
 
 			for (int i = 0; i < areasSize; i++) {
 				delete areas[i]; 
 			}
 			delete[] areas; 
-			
+			cout << ".............................Deleted areas" << endl;
+
 
 		};
 
