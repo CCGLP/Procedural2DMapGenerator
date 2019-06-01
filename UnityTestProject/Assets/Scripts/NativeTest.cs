@@ -49,7 +49,7 @@ public class NativeTest : MonoBehaviour
 
         UnityEngine.Debug.Log("TIME C#: " + watch.ElapsedMilliseconds);
 
-        var map = Procedural2DHelper.CreateDrunkardWalkArea(100, 100, 0, 0, 1000);
+        var map = Procedural2DHelper.CreateBSPDungeonArea(1000, 800, 0, 0);
         
         MapDrawer.DrawMap(squarePrefab, map);  
        

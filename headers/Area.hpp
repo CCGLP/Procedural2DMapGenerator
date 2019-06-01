@@ -22,21 +22,33 @@ struct Area {
 	public: 
 		Area(int width, int height, int x = 0, int y = 0); 
 		Area(const Area& other); 
-		~Area() {
-			cout << "Deleting memory............" << endl;
-			for (int i = 0; i < width; i++) {
-				delete[] tileInfo[i];
+		~Area() { //Problemita en el destructor aquí. Si borro hijos antes, peta al borrar el padre. 
+			cout << "Deleting memory............ " << width << "   " << height<< "  " << x << "   " << y<< endl;
+			if (tileInfo) {
+				for (int i = 0; i < width; i++) {
+					if (tileInfo[i]) {
+						delete[] tileInfo[i];
+						tileInfo[i] = nullptr; 
+					}
+				}
+				delete[] tileInfo;
+				tileInfo = nullptr; 
 			}
 
-			delete[] tileInfo;
-			cout << ".............................Deleted tiles" << endl;
 
+			if (areas && areasSize > 0) {
 
-			for (int i = 0; i < areasSize; i++) {
-				delete areas[i]; 
+				for (int i = 0; i < areasSize; i++) {
+					if (areas[i]) {
+						delete areas[i];
+						areas[i] = nullptr; 
+					}
+				}
+				delete[] areas;
+				areas = nullptr; 
+
 			}
-			delete[] areas; 
-			cout << ".............................Deleted areas" << endl;
+			
 
 
 		};

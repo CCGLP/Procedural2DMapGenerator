@@ -30,7 +30,10 @@ int pepe() {
 	}
 	
 	int x;
-
+	/*for (int i = 0; i < area->areasSize; i++) {
+		destroyArea(area->areas[i]); 
+	}*/
+	cout << "PEPO"; 
 	//delete area; 
 	destroyArea(area); 
 	return 9; 
