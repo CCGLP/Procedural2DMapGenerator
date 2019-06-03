@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
-using UnityEngine; 
+using UnityEngine;
 
 namespace Procedural2DGenerator
 {
@@ -60,19 +60,18 @@ namespace Procedural2DGenerator
         public unsafe static Area CreateArea(int width, int height, int x, int y)
         {
             AreaUnsafe* uArea = CreateUnsafeArea(width, height, x, y);
-           
+
             return ConvertUnsafeToSafe(uArea);
         }
 
+        private static int counter = 0;
         private unsafe static Area ConvertUnsafeToSafe(AreaUnsafe* uArea)
         {
             Area area = new Area();
 
             area.x = uArea->x;
             area.y = uArea->y;
-
             area.tileInfo = new int[uArea->width, uArea->height];
-
             for (int i = 0; i < uArea->width; i++)
             {
                 for (int j = 0; j < uArea->height; j++)
@@ -86,10 +85,9 @@ namespace Procedural2DGenerator
 
             for (int i = 0; i < uArea->areasCount; i++)
             {
-                area.areas[i] = ConvertUnsafeToSafe(uArea->areas[i]);
+                area.areas[i] = ConvertUnsafeToSafe((uArea->areas[i]));
             }
 
-            DestroyAreaUnsafe(uArea);
 
             return area;
         }
@@ -135,8 +133,11 @@ namespace Procedural2DGenerator
 
         public unsafe static Area CreateBSPDungeonArea(int width, int height, int x = 0, int y = 0)
         {
+
             AreaUnsafe* areaUnsafe = CreateUnsafeBSPDungeonArea(width, height, x, y);
-            return ConvertUnsafeToSafe(areaUnsafe); 
+            Area area = ConvertUnsafeToSafe(areaUnsafe);
+            DestroyAreaUnsafe(areaUnsafe);  
+            return area;
         }
 
         //TODO Generate In Area BSP
@@ -144,11 +145,11 @@ namespace Procedural2DGenerator
 
     public struct Area
     {
-        
+
         public int x, y;
         public int[,] tileInfo;
-        public Area[] areas; 
-        
+        public Area[] areas;
+
     }
-   
+
 }
