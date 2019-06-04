@@ -23,10 +23,10 @@ public class NativeTest : MonoBehaviour
 
         //var a = Procedural2DHelper.CreateArea(100, 100, 0, 0);
         // a = Procedural2DHelper.GenerateDrunkardWalkInArea(a);
-        for (int i = 0; i < 1; i++)
-        {
-           var a = Procedural2DHelper.CreateBSPDungeonArea(1000, 1000, 0, 0);
-        }
+        //for (int i = 0; i < 1; i++)
+        //{
+        //   var a = Procedural2DHelper.CreateBSPDungeonArea(1000, 1000, 0, 0);
+        //}
         watch.Stop();
 
         UnityEngine.Debug.Log("TIME C++: " + watch.ElapsedMilliseconds);
@@ -49,11 +49,26 @@ public class NativeTest : MonoBehaviour
 
         UnityEngine.Debug.Log("TIME C#: " + watch.ElapsedMilliseconds);
 
-        var map = Procedural2DHelper.CreateBSPDungeonArea(100, 100, 0, 0,4,10);
-        
-        MapDrawer.DrawMap(squarePrefab, map);  
-       
-    
+        // var map = Procedural2DHelper.CreateBSPDungeonArea(100, 100, 0, 0,4,10);
+
+        watch.Reset(); 
+        watch.Start(); 
+        var map = Procedural2DHelper.CreateDrunkardWalkArea(1000, 1000, 0, 0, 1000000);
+        watch.Stop();
+        UnityEngine.Debug.Log("Hola buenas tardes: " + watch.ElapsedMilliseconds);
+
+        watch.Reset();
+        watch.Start(); 
+        MapDrawer.DrawMapWithTileMap(map);
+        watch.Stop();
+        UnityEngine.Debug.Log("TIME TILE: " + watch.ElapsedMilliseconds); 
+        watch.Reset();
+        //watch.Start(); 
+        //MapDrawer.DrawMap(squarePrefab, map);
+        //watch.Stop();
+        //UnityEngine.Debug.Log("TIME Prefab: " + watch.ElapsedMilliseconds);
+
+
 
     }
 

@@ -688,28 +688,30 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ccglp\\.nuget\\packages\\": {},
+    "C:\\Users\\Carlos\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Miscelanea\\Procedural2DMapGenerator\\projects\\vs-2019\\TestAppCs\\TestAppCs.csproj",
+      "projectUniqueName": "C:\\Users\\Carlos\\source\\repos\\Procedural2DGenerator++\\projects\\vs-2019\\TestAppCs\\TestAppCs.csproj",
       "projectName": "TestAppCs",
-      "projectPath": "D:\\Miscelanea\\Procedural2DMapGenerator\\projects\\vs-2019\\TestAppCs\\TestAppCs.csproj",
-      "packagesPath": "C:\\Users\\ccglp\\.nuget\\packages\\",
-      "outputPath": "D:\\Miscelanea\\Procedural2DMapGenerator\\projects\\vs-2019\\TestAppCs\\obj\\",
+      "projectPath": "C:\\Users\\Carlos\\source\\repos\\Procedural2DGenerator++\\projects\\vs-2019\\TestAppCs\\TestAppCs.csproj",
+      "packagesPath": "C:\\Users\\Carlos\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Carlos\\source\\repos\\Procedural2DGenerator++\\projects\\vs-2019\\TestAppCs\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\ccglp\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Carlos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
