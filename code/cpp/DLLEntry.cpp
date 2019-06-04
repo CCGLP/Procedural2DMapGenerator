@@ -48,16 +48,22 @@ PROCEDURAL_2D_API void generateDrunkardWalkInArea(Area* area, int iterations)
 	generator.generate(area); 
 }
 
-PROCEDURAL_2D_API Area* createBSPDungeonArea(int width, int height, int x, int y)
+PROCEDURAL_2D_API Area* createBSPDungeonArea(int width, int height, int x, int y, int minRooms, int maxRooms, int minWidth, int minHeight)
 {
 	Area* area = createEmptyArea(width, height, x, y); 
-	generateBSPDungeonInArea(area); 
+	generateBSPDungeonInArea(area, minRooms, maxRooms, minWidth, minHeight); 
 	return area; 
 }
 
-PROCEDURAL_2D_API void generateBSPDungeonInArea(Area* area)
+PROCEDURAL_2D_API void generateBSPDungeonInArea(Area* area, int minRooms, int maxRooms, int minWidth, int minHeight)
 {
 	BSPDungeon generator;
+	BSPConfiguration* config = new BSPConfiguration(); 
+	config->maxRooms = maxRooms;
+	config->minRooms = minRooms;
+	config->minWidth = minWidth;
+	config->minHeight = minHeight; 
+	generator.configure(config); 
 	generator.generate(area); 
 }
 

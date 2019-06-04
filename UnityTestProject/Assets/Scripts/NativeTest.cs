@@ -35,21 +35,21 @@ public class NativeTest : MonoBehaviour
 
         watch.Reset();
         
-        watch.Start();
+        //watch.Start();
 
 
-        for (int i = 0; i < 1; i++)
-        {
-            var b = GenerateAreaDrunkardWalk();
-        }
+        //for (int i = 0; i < 10; i++)
+        //{
+        //    var b = GenerateAreaDrunkardWalk();
+        //}
 
 
-        watch.Stop(); 
+        //watch.Stop(); 
 
 
         UnityEngine.Debug.Log("TIME C#: " + watch.ElapsedMilliseconds);
 
-        var map = Procedural2DHelper.CreateBSPDungeonArea(1000, 800, 0, 0);
+        var map = Procedural2DHelper.CreateBSPDungeonArea(100, 100, 0, 0,4,10);
         
         MapDrawer.DrawMap(squarePrefab, map);  
        

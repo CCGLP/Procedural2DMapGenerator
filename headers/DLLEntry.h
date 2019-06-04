@@ -22,8 +22,8 @@ extern "C" {
 
 
 	//BSPDungeon 
-	PROCEDURAL_2D_API Area* createBSPDungeonArea(int width, int height, int x = 0, int y = 0);
-	PROCEDURAL_2D_API void generateBSPDungeonInArea(Area* area);
+	PROCEDURAL_2D_API Area* createBSPDungeonArea(int width, int height, int x = 0, int y = 0, int minRooms = 10, int maxRooms = 100, int minWidth = 1, int minHeight = 1);
+	PROCEDURAL_2D_API void generateBSPDungeonInArea(Area* area, int minRooms = 10, int maxRooms = 100, int minWidth = 1, int minHeight = 1);
 }
 
 

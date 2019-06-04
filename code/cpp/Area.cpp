@@ -21,6 +21,7 @@ Area::Area(int width, int height, int x, int y)
 			this->tileInfo[i][j] = 0; 
 		}
 	}
+	this->areas = nullptr; 
 }
 
 Area::Area(const Area& other)
@@ -66,8 +67,7 @@ void Area::processArea()
 			for (int y = area->y, j = 0; y < areaHeight; y++, j++) {//600x - 800y AreaChild  100w 200h    
 				tileInfo[x-this->x][y-this->y] = (*area)[p][j]; 
 			}
-		/*	j = 0;
-			p++; */
+
 		}
 	}
 
