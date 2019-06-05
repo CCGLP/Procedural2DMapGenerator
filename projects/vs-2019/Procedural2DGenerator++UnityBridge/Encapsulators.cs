@@ -146,6 +146,15 @@ namespace Procedural2DGenerator
             return area;
         }
 
+        public unsafe static Area GenerateBSPDungeonInArea(Area area, int minRooms = 10, int maxRooms = 100, int minWidth = 1, int minHeight = 1)
+        {
+            AreaUnsafe* unsafeArea = ConvertSafeToUnsafe(area);
+            GenerateBSPDungeonAreaUnsafe(unsafeArea,minRooms,maxRooms, minWidth, minHeight);
+            Area areaReturn = ConvertUnsafeToSafe(unsafeArea);
+            DestroyAreaUnsafe(unsafeArea);
+            return areaReturn;
+        }
+
         //TODO Generate In Area BSP
     }
 

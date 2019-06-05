@@ -10,8 +10,6 @@ using System.Diagnostics;
 public class NativeTest : MonoBehaviour
 {
 
-    [SerializeField]
-    private GameObject squarePrefab; 
 
     private void Start()
     {

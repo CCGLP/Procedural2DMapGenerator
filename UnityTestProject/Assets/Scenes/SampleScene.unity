@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 876741201}
   - component: {fileID: 876741200}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GameController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -229,11 +229,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 876741199}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e63e82c6a7fac2b499629118b0d8fda4, type: 3}
+  m_Script: {fileID: 11500000, guid: db3c37adc1b41024bb2e97734c108f48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  squarePrefab: {fileID: 3005528301469400312, guid: 890093fc838688a49bb55bf5dcff5631,
-    type: 3}
+  squarePrefab: {fileID: 0}
 --- !u!4 &876741201
 Transform:
   m_ObjectHideFlags: 0

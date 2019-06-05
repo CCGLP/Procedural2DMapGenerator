@@ -16,11 +16,9 @@ UnityTestProject/[Bb]uilds/
 UnityTestProject/[Ll]ogs/
 UnityTestProject/[Mm]emoryCaptures/
 
-# Never ignore Asset meta data
-!/[Aa]ssets/**/*.meta
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
-# /[Aa]ssets/AssetStoreTools*
+# /UnityTestProject/[Aa]ssets/AssetStoreTools*
 
 # TextMesh Pro files
 [Aa]ssets/TextMesh*Pro/
@@ -63,6 +61,7 @@ sysinfo.txt
 
 # Crashlytics generated file
 crashlytics-build.properties
+
 
 
 
@@ -395,3 +394,7 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+
+
+# Never ignore Asset meta data
+!/UnityTestProject/[Aa]ssets/**/*.meta
