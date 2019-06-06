@@ -47,11 +47,12 @@ public class NativeTest : MonoBehaviour
 
         UnityEngine.Debug.Log("TIME C#: " + watch.ElapsedMilliseconds);
 
-        // var map = Procedural2DHelper.CreateBSPDungeonArea(100, 100, 0, 0,4,10);
 
         watch.Reset(); 
-        watch.Start(); 
-        var map = Procedural2DHelper.CreateDrunkardWalkArea(1000, 1000, 0, 0, 1000000);
+        watch.Start();
+        //var map = Procedural2DHelper.CreateDrunkardWalkArea(1000, 1000, 0, 0, 1000000);
+          var map = Procedural2DHelper.CreateBSPDungeonArea(1000, 1000, 0, 0,3000,5300);
+
         watch.Stop();
         UnityEngine.Debug.Log("Hola buenas tardes: " + watch.ElapsedMilliseconds);
 

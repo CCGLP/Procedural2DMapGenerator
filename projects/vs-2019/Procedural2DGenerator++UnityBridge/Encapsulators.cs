@@ -10,10 +10,15 @@ namespace Procedural2DGenerator
 {
 
 
-    // TODO GENERAR TODO DESDE UNA STRUCT VACIA, GANO MUCHO MAS SI ME OLVIDO DE
-    // ENCAPSULAR LAS AREAS DE LOS COJONES
+    [System.Serializable]
+    public struct Area
+    {
 
-    //Si necesito pasillos, los creo directamente en el padre. 
+        public int x, y;
+        public int[,] tileInfo;
+        public Area[] areas;
+
+    }
     public class Procedural2DHelper
     {
         [StructLayout(LayoutKind.Sequential)]
@@ -28,8 +33,7 @@ namespace Procedural2DGenerator
             public int areasCount;
         }
 
-
-
+      
 
         [DllImport("Procedural2DGenerator++", EntryPoint = "destroyArea")]
         private unsafe static extern void DestroyAreaUnsafe(AreaUnsafe* area);
@@ -158,13 +162,7 @@ namespace Procedural2DGenerator
         //TODO Generate In Area BSP
     }
 
-    public struct Area
-    {
 
-        public int x, y;
-        public int[,] tileInfo;
-        public Area[] areas;
-
-    }
+  
 
 }

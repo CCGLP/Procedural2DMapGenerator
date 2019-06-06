@@ -12,5 +12,35 @@ xsi:schemaLocation="
                         UnityEditor.PackageManager.UI ../../UIElementsSchema/UnityEditor.PackageManager.UI.xsd
 "
 >
-  <engine:Button name="Roberto" text="Create Map"></engine:Button>/>
+
+  <engine:Label class="title" text="Map Creator"></engine:Label>/>
+  
+  
+  <engine:Label class="subTitle" text="Map Size"> </engine:Label>
+  <engine:Box class ="parentSize">
+    <engine:Label  class ="sizeText" name ="sizeXText"></engine:Label>/>
+    <engine:Label  class ="sizeText" name ="sizeYText"></engine:Label>/>
+  </engine:Box>
+  <engine:Box class ="parentSize">
+    <engine:Slider  class ="sizeSlider"  value ="100" name="sizeX" low-value="40" high-value="5000"></engine:Slider>
+    <engine:Slider  class ="sizeSlider"  value="100" name="sizeY" low-value="40" high-value="5000"></engine:Slider>
+  </engine:Box>
+
+  <engine:Label class="subTitle" text="Map type data"> </engine:Label>
+  <engine:Box class="mapSpecificParent" name="rootMapSpecific">
+    <editor:EnumField label="Algorithm" name="mapSelector" type="MapType" value="DRUNKARD"/>
+  </engine:Box>
+
+
+  <engine:Label class="subTitle" text="Default general data"> </engine:Label>
+  <engine:Box class ="parentDefaultObjects">
+  <editor:ObjectField  label="Default Collision Tile" allow-scene-objects="false" name="tileColision"></editor:ObjectField>
+  <editor:ObjectField  label="Default Floor Tile" allow-scene-objects="false" name="tileFloor"></editor:ObjectField>
+    <engine:Toggle label="AutoClearMapWhenGenerate" name="autoClear"></engine:Toggle>
+  </engine:Box>
+
+  <engine:Box class ="buttonParent">
+  <engine:Button name="createMap" text="Create Map"></engine:Button>/>
+  <engine:Button name="clearMap" text="Clear Map"></engine:Button>/>
+  </engine:Box>
 </engine:UXML>

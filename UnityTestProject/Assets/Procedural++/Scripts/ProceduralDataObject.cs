@@ -8,6 +8,6 @@ using UnityEngine.Tilemaps;
 public class ProceduralDataObject : ScriptableObject
 {
     public Tile defaultCollisionTile;
-    public Tile defaultFreeTile; 
-
+    public Tile defaultFreeTile;
+    public bool autoClearTileMap; 
 }

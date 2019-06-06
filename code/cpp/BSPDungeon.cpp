@@ -56,8 +56,7 @@ void BSPDungeon::generate(Area* area, int childrenAsigned)
 			float factor = ((rand() % 2000) / 10000.0f) + 0.3f;
 			int roomsAssigned = childrenAsigned * factor;
 
-			cout << "Rooms assigned first room : " << roomsAssigned << endl;
-			cout << "Rooms assigned second room: " << childrenAsigned - roomsAssigned << endl;
+
 			generate(child1, roomsAssigned);
 			generate(child2, childrenAsigned - roomsAssigned);
 		}
@@ -95,21 +94,15 @@ void BSPDungeon::generateCorridorsBetweenAreas(Area* area1, Area* area2, Area* m
 	int yFactor = tile2.second - tile1.second; 
 	yFactor = yFactor > 0 ? 1 : -1; 
 
+	int j = tile1.second; 
+	for (j = tile1.second; j != tile2.second; j += yFactor) {
+		(*mainParent)[tile1.first- mainParent->getX()][j - mainParent->getY()] = 1;
+	}
 	for (int i = tile1.first; i != tile2.first; i += xFactor) {
-		for (int j = tile1.second; j != tile2.second; j += yFactor) {
-			(*mainParent)[i - mainParent->getX()][j - mainParent->getY()] = 1; 
-		}
-
-		if (tile1.second == tile2.second) {
-			(*mainParent)[i - mainParent->getX()][tile1.second - mainParent->getY()] = 1;
-		}
+		(*mainParent)[i - mainParent->getX()][j - mainParent->getY()] = 1;
 	}
 
-	if (tile1.first == tile2.first) {
-		for (int j = tile1.second; j != tile2.second; j += yFactor) {
-			(*mainParent)[tile1.first- mainParent->getX()][j - mainParent->getY()] = 1;
-		}
-	}
+	
 
 	if (area1->areasSize != 0) {
 		generateCorridorsBetweenAreas(area1->areas[0], area1->areas[1], mainParent); 

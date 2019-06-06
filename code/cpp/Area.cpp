@@ -51,7 +51,6 @@ Area::Area(const Area& other)
 
 void Area::processArea()
 {
-	cout << "Processing area" << endl; 
 	for (int i = 0; i < areasSize; i++) {
 		Area* area = (areas[i]);
 		int areaWidth = area->x + area->width;

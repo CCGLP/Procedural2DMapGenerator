@@ -23,7 +23,6 @@ struct Area {
 		Area(int width, int height, int x = 0, int y = 0); 
 		Area(const Area& other); 
 		~Area() { //Problemita en el destructor aquí. Si borro hijos antes, peta al borrar el padre. 
-			cout << "Deleting memory............ " << width << "   " << height<< "  " << x << "   " << y<< endl;
 			if (tileInfo) {
 				for (int i = 0; i < width; i++) {
 					if (tileInfo[i]) {
