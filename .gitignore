@@ -15,7 +15,7 @@ UnityTestProject/[Bb]uild/
 UnityTestProject/[Bb]uilds/
 UnityTestProject/[Ll]ogs/
 UnityTestProject/[Mm]emoryCaptures/
-
+UnityTestProject/Assets/GeneratedMaps/
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /UnityTestProject/[Aa]ssets/AssetStoreTools*

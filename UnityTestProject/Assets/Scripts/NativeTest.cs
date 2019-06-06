@@ -14,64 +14,45 @@ public class NativeTest : MonoBehaviour
     private void Start()
     {
 
+        // BENCHMARK************************************************************************
 
-        
         var watch = Stopwatch.StartNew();
-        // something to time
 
-        //var a = Procedural2DHelper.CreateArea(100, 100, 0, 0);
-        // a = Procedural2DHelper.GenerateDrunkardWalkInArea(a);
-        //for (int i = 0; i < 1; i++)
-        //{
-        //   var a = Procedural2DHelper.CreateBSPDungeonArea(1000, 1000, 0, 0);
-        //}
+      
+        var testMap = GenerateAreaDrunkardWalk();
         watch.Stop();
 
-        UnityEngine.Debug.Log("TIME C++: " + watch.ElapsedMilliseconds);
-        
-    
+        UnityEngine.Debug.Log("Time creating C# test map: " + watch.ElapsedMilliseconds);
 
         watch.Reset();
-        
-        //watch.Start();
-
-
-        //for (int i = 0; i < 10; i++)
-        //{
-        //    var b = GenerateAreaDrunkardWalk();
-        //}
-
-
-        //watch.Stop(); 
-
-
-        UnityEngine.Debug.Log("TIME C#: " + watch.ElapsedMilliseconds);
-
-
-        watch.Reset(); 
         watch.Start();
-        //var map = Procedural2DHelper.CreateDrunkardWalkArea(1000, 1000, 0, 0, 1000000);
-          var map = Procedural2DHelper.CreateBSPDungeonArea(1000, 1000, 0, 0,3000,5300);
-
+        testMap = Procedural2DHelper.CreateDrunkardWalkArea(1000, 1000, 0, 0, 100000);
         watch.Stop();
-        UnityEngine.Debug.Log("Hola buenas tardes: " + watch.ElapsedMilliseconds);
+        UnityEngine.Debug.Log("Time creating C++ test map: " + watch.ElapsedMilliseconds);
+
+
+
+
+        //Actual map creation ***************************************************************
+        watch.Reset();
+        watch.Start();
+        var map = Procedural2DHelper.CreateBSPDungeonArea(1000, 1000, 0, 0,3000,5300);
+        watch.Stop();
+        UnityEngine.Debug.Log("Time elapsed creating map: " + watch.ElapsedMilliseconds);
+
 
         watch.Reset();
         watch.Start(); 
         MapDrawer.DrawMapWithTileMap(map);
         watch.Stop();
-        UnityEngine.Debug.Log("TIME TILE: " + watch.ElapsedMilliseconds); 
+        UnityEngine.Debug.Log("Time creating tile map: " + watch.ElapsedMilliseconds); 
         watch.Reset();
-        //watch.Start(); 
-        //MapDrawer.DrawMap(squarePrefab, map);
-        //watch.Stop();
-        //UnityEngine.Debug.Log("TIME Prefab: " + watch.ElapsedMilliseconds);
 
 
 
     }
 
-
+    
     private Area GenerateAreaDrunkardWalk(int iterations = 100000)
     {
         Area area = new Area();

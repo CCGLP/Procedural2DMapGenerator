@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<engine:UXML
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:engine="UnityEngine.UIElements"
+    xmlns:editor="UnityEditor.UIElements"
+    xmlns:upm="UnityEditor.PackageManager.UI"
+
+xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd"
+xsi:schemaLocation="
+                        UnityEngine.UIElements ../../../UIElementsSchema/UnityEngine.UIElements.xsd
+                        UnityEditor.UIElements ../../../UIElementsSchema/UnityEditor.UIElements.xsd
+                        UnityEditor.PackageManager.UI ../../../UIElementsSchema/UnityEditor.PackageManager.UI.xsd
+"
+>
+
+  <engine:Label class="title" text="Map Creator"></engine:Label>/>
+  
+  
+  <engine:Label class="subTitle" text="Map Size"> </engine:Label>
+  <engine:Box class ="parentSize">
+    <engine:Label  class ="sizeText" name ="sizeXText"></engine:Label>/>
+    <engine:Label  class ="sizeText" name ="sizeYText"></engine:Label>/>
+  </engine:Box>
+  <engine:Box class ="parentSize">
+    <engine:Slider  class ="sizeSlider"  value ="100" name="sizeX" low-value="40" high-value="2000"></engine:Slider>
+    <engine:Slider  class ="sizeSlider"  value="100" name="sizeY" low-value="40" high-value="2000"></engine:Slider>
+  </engine:Box>
+
+  <engine:Label class="subTitle" text="Map type data"> </engine:Label>
+  <engine:Box class="mapSpecificParent" name="rootMapSpecific">
+    <editor:EnumField label="Algorithm" name="mapSelector" type="MapType" value="DRUNKARD"/>
+  </engine:Box>
+
+
+  <engine:Label class="subTitle" text="Default general data"> </engine:Label>
+  <engine:Box class ="parentDefaultObjects">
+  <editor:ObjectField  label="Default Collision Tile" tooltip="Default Collision Tile used to paint the map" allow-scene-objects="false" name="tileColision"></editor:ObjectField>
+  <editor:ObjectField  label="Default Floor Tile"  allow-scene-objects="false" tooltip="Default Floor Tile used to paint the map (might be empty)" name="tileFloor"></editor:ObjectField>
+    <engine:Toggle label="AutoClearMapWhenGenerate" tooltip="Active to clean all previous map tiles before painting new map" name="autoClear"></engine:Toggle>
+  </engine:Box>
+
+  <engine:Box class ="buttonParent">
+  <engine:Button name="createMap" tooltip="Create new map on the scene" text="Create Map"></engine:Button>
+  <engine:Button name="clearMap" tooltip="Delete all tiles on the scene" text="Clear Map"></engine:Button>
+  <engine:Button name ="saveMap" tooltip="Save previous generated Map" text="Save Map"></engine:Button>
+  <engine:Button name ="loadMap" tooltip="Load a .bin map file" text="Load Map"></engine:Button>
+  </engine:Box>
+</engine:UXML>

@@ -5,19 +5,19 @@
 #include <Room.hpp>
 using namespace std; 
 
-int pepe(); 
+int test(); 
 
 int main() {
 
 	
-	pepe(); 
+	test(); 
 	
 
 	return 0; 
 }
 
 
-int pepe() {
+int test() {
 
 	Area* area = createBSPDungeonArea(100, 100); 
 	//for (int j = 0; j < area->getHeight(); j++) {

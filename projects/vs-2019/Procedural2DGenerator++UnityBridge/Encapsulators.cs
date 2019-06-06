@@ -66,7 +66,6 @@ namespace Procedural2DGenerator
             return ConvertUnsafeToSafe(uArea);
         }
 
-        private static int counter = 0;
         private unsafe static Area ConvertUnsafeToSafe(AreaUnsafe* uArea)
         {
             Area area = new Area();
@@ -159,7 +158,6 @@ namespace Procedural2DGenerator
             return areaReturn;
         }
 
-        //TODO Generate In Area BSP
     }
 
 

@@ -1,0 +1,56 @@
+Label {
+    font-weight: bold;
+}
+
+.title{
+	font-size: 30px; 
+	text-align:center;
+	margin: 0 0 0 15; 
+}
+
+.subTitle{
+	font-size: 20px; 
+	text-align:center;
+	margin: 20 15 10 15; 
+}
+.parentSize{
+	padding: 0 0 0 0; 
+	min-width: 300px; 
+	flex-direction: row;
+	margin: 0 10 0 10; 
+}
+
+.sizeSlider{
+	flex-grow:1; 
+	margin: 0 15 0 15; 
+	min-width:150px; 
+}
+
+.sizeText{
+	flex-grow:1; 
+	min-width:150px; 
+	align-self:center;
+	text-align:center;
+	margin: 0 15 0 15; 
+	text-color: rgb(240, 38, 55);
+	font-size: 16px; 
+	font-weight: bold; 
+}
+.mapSpecificParent{
+	height: 150px; 
+	margin: 0 15 0 15;
+	font-size: 13px; 
+}
+.buttonParent{
+	margin: 20 0 0 0;
+	flex-direction: row;
+}
+
+Button{
+	flex-grow:1; 
+	margin: 0 3 0 3; 
+}
+.parentDefaultObjects{
+	margin: 0 10 0 10; 
+	font-size: 17; 
+}
