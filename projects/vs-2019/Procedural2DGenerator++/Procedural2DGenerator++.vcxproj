@@ -91,20 +91,26 @@ xcopy /y "..\$(IntDir)Procedural2DGenerator++.dll" "..\..\..\UnityTestProject\As
   <ItemGroup>
     <ClInclude Include="..\..\..\headers\Area.hpp" />
     <ClInclude Include="..\..\..\headers\BSPDungeon.hpp" />
+    <ClInclude Include="..\..\..\headers\CellularAutomata.hpp" />
+    <ClInclude Include="..\..\..\headers\CorridorGeneration.hpp" />
     <ClInclude Include="..\..\..\headers\DLLEntry.h" />
     <ClInclude Include="..\..\..\headers\DrunkardWalk.hpp" />
     <ClInclude Include="..\..\..\headers\Generator.hpp" />
     <ClInclude Include="..\..\..\headers\LineMap.hpp" />
     <ClInclude Include="..\..\..\headers\RandomNoise.hpp" />
+    <ClInclude Include="..\..\..\headers\SimpleDungeon.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\code\cpp\Area.cpp" />
     <ClCompile Include="..\..\..\code\cpp\BSPDungeon.cpp" />
+    <ClCompile Include="..\..\..\code\cpp\CellularAutomata.cpp" />
+    <ClCompile Include="..\..\..\code\cpp\CorridorGeneration.cpp" />
     <ClCompile Include="..\..\..\code\cpp\DLLEntry.cpp" />
     <ClCompile Include="..\..\..\code\cpp\DrunkardWalk.cpp" />
     <ClCompile Include="..\..\..\code\cpp\Generator.cpp" />
     <ClCompile Include="..\..\..\code\cpp\LineMap.cpp" />
     <ClCompile Include="..\..\..\code\cpp\RandomNoise.cpp" />
+    <ClCompile Include="..\..\..\code\cpp\SimpleDungeon.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

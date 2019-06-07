@@ -18,24 +18,37 @@ DrunkardWalk::DrunkardWalk(int iterations)
 
 void DrunkardWalk::generate(Area* area)
 {
-	int x = area->getWidth() * 0.5f; 
-	int y = area->getHeight() * 0.5f; 
-	srand(time(0)); 
+	int x = configuration.startPointX; 
+	int y = configuration.startPointY; 
+
+	if (configuration.startPointX == -1) {
+		x = area->getWidth() * 0.5f; //default, mid entry
+	}
+	if (configuration.startPointY == -1) {
+		y = area->getHeight() * 0.5f; //default, mid entry
+	}
+
 	
+	if (!initialConfigurationDone) {
+		initialConfigurationBeforeGeneration(); 
+	}
+	srand(time(0)); 
+	int randValue = 0; 
+
 	for (int i = 0; i < configuration.iterations; i++) {
-		int randValue = rand(); 
+		randValue = rand(); 
 		
 
-		if (randValue < configuration.upChance * RAND_MAX) { //UP
+		if (randValue < configuration.upChance ) { //UP
 			y++;
 			y = y >= area->getHeight() ? area->getHeight() - 1 : y; 
 		}
-		else if (randValue < (configuration.upChance + configuration.rightChance) * RAND_MAX) { //RIGHT
+		else if (randValue < configuration.rightChance) { //RIGHT
 			x++; 
 			x = x >= area->getWidth() ? area->getWidth() - 1 : x; 
 		}
 
-		else if (randValue < (configuration.upChance + configuration.rightChance + configuration.downChance) * RAND_MAX) { //DOWN
+		else if (randValue < configuration.downChance) { //DOWN
 			y -- ;
 			y = y < 0 ? 0 : y; 
 		}
@@ -50,22 +63,42 @@ void DrunkardWalk::generate(Area* area)
 
 void DrunkardWalk::configure(void* data)
 {
+	initialConfigurationDone = false;
+
 	DrunkardConfiguration* newConfig = (DrunkardConfiguration*)data; 
 
 	configuration.downChance = newConfig->downChance;
 	configuration.upChance = newConfig->upChance;
 	configuration.leftChance = newConfig->leftChance;
 	configuration.rightChance = newConfig->rightChance; 
+	configuration.iterations = newConfig->iterations; 
+	configuration.startPointX = newConfig->startPointX; 
+	configuration.startPointY = newConfig->startPointY;
 
 	delete newConfig; 
 }
 
+void DrunkardWalk::initialConfigurationBeforeGeneration()
+{
+	//Initial Config
+	configuration.rightChance += configuration.upChance;
+	configuration.downChance += configuration.rightChance;
+	configuration.upChance *= RAND_MAX;
+	configuration.rightChance *= RAND_MAX;
+	configuration.downChance *= RAND_MAX;
+	initialConfigurationDone = true; 
+
+}
+
 void DrunkardWalk::defaultConfiguration(int iterations)
 {
+	initialConfigurationDone = false; 
 	configuration = DrunkardConfiguration();
 	configuration.downChance = 0.25f;
 	configuration.upChance = 0.25f;
 	configuration.leftChance = 0.25f;
 	configuration.rightChance = 0.25f;
 	configuration.iterations = iterations;
+	configuration.startPointX = -1;
+	configuration.startPointY = -1;
 }

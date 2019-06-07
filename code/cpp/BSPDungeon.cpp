@@ -86,8 +86,8 @@ void BSPDungeon::generateCorridors(Area* area)
 }
 void BSPDungeon::generateCorridorsBetweenAreas(Area* area1, Area* area2, Area* mainParent)
 {
-	pair<int, int> tile1 = getRandomPointInArea(area1, mainParent); 
-	pair<int, int> tile2 = getRandomPointInArea(area2, mainParent); 
+	pair<int, int> tile1 = area1->getRandomPointInArea (mainParent);
+	pair<int, int> tile2 = area2->getRandomPointInArea (mainParent);
 
 	int xFactor =  tile2.first - tile1.first; 
 	xFactor = xFactor > 0 ? 1 : -1; 
@@ -112,23 +112,6 @@ void BSPDungeon::generateCorridorsBetweenAreas(Area* area1, Area* area2, Area* m
 	}
 
 
-}
-pair<int, int> BSPDungeon::getRandomPointInArea(Area* area, Area* mainParent)
-{
-	vector<pair<int, int>> tilesOccupied;
-	int width = area->getX() + area->getWidth();
-	int height = area->getY() + area->getHeight();
-	for (int i = area->getX(); i < width; i++) {
-		for (int j = area->getY(); j < height; j++) {
-
-			if ((*mainParent)[i - mainParent->getX()][j - mainParent->getY()] == 1) {
-				tilesOccupied.push_back(pair<int, int>(i, j));
-			}
-		}
-	}
-
-	pair<int, int> randValue = tilesOccupied[rand() % tilesOccupied.size()]; 
-	return randValue;
 }
 
 

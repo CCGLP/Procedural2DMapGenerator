@@ -1,6 +1,8 @@
 #pragma once
 #include <vector>
 #include <iostream>
+#include <utility>
+
 using namespace std; 
 
 
@@ -51,6 +53,8 @@ struct Area {
 
 
 		};
+
+		pair<int, int> getRandomPointInArea(Area* mainParent);
 
 		///Changes tileInfo based on child Areas. 
 		void processArea();

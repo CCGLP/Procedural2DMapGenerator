@@ -73,3 +73,21 @@ void Area::processArea()
 
 }
 
+pair<int, int> Area::getRandomPointInArea(Area* mainParent)
+{
+	vector<pair<int, int>> tilesOccupied;
+	int width = x + this->width;
+	int height = y + this->height;
+	for (int i = x; i < width; i++) {
+		for (int j = y; j < height; j++) {
+
+			if ((*mainParent)[i - mainParent->getX()][j - mainParent->getY()] == 1) {
+				tilesOccupied.push_back(pair<int, int>(i, j));
+			}
+		}
+	}
+
+	pair<int, int> randValue = tilesOccupied[rand() % tilesOccupied.size()];
+	return randValue;
+}
+
