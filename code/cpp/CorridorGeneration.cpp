@@ -2,6 +2,10 @@
 #pragma once
 
 using namespace std; 
+
+/**
+ * @brief uses the simple corridor generation with two random points
+ */
 void CorridorGeneration::simpleCorridorWithRandomPoints(Area* area1, Area* area2, Area* mainParent)
 {
 	pair<int, int> tile1 = area1->getRandomPointInArea(mainParent);
@@ -9,6 +13,10 @@ void CorridorGeneration::simpleCorridorWithRandomPoints(Area* area1, Area* area2
 	simpleCorridorGeneration(tile1, tile2, mainParent); 
 }
 
+/**
+ * @brief simple corridor generation (L shape) between two points. Must provide the mainParent area
+ *
+ */
 void CorridorGeneration::simpleCorridorGeneration(pair<int, int> point1, pair<int, int> point2, Area* mainParent)
 {
 	int xFactor = point2.first - point1.first;

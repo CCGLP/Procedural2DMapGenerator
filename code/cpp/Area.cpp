@@ -3,7 +3,10 @@
 using namespace std; 
 
 
-
+/**
+ * @brief Default constructor with width, height and position
+ *
+ */
 Area::Area(int width, int height, int x, int y)
 {
 	this->width = width; 
@@ -24,6 +27,11 @@ Area::Area(int width, int height, int x, int y)
 	this->areas = nullptr; 
 }
 
+
+/**
+ * @brief Copy constructor
+ *
+ */
 Area::Area(const Area& other)
 {
 	this->x = other.x;
@@ -48,7 +56,10 @@ Area::Area(const Area& other)
 }
 
 
-
+/**
+ * @brief This method will add all the child tiles to this area. 
+ *
+ */
 void Area::processArea()
 {
 	for (int i = 0; i < areasSize; i++) {
@@ -62,8 +73,8 @@ void Area::processArea()
 
 		int p; 
 		int j;
-		for (int x = area->x, p = 0; x < areaWidth; x++,p ++) { // 200x - 500y   Area 1     500w 500h   
-			for (int y = area->y, j = 0; y < areaHeight; y++, j++) {//600x - 800y AreaChild  100w 200h    
+		for (int x = area->x, p = 0; x < areaWidth; x++,p ++) { 
+			for (int y = area->y, j = 0; y < areaHeight; y++, j++) {
 				tileInfo[x-this->x][y-this->y] = (*area)[p][j]; 
 			}
 
@@ -73,6 +84,11 @@ void Area::processArea()
 
 }
 
+
+/**
+ * @brief Returns true if this area is intersecting the provided other area
+ *
+ */
 bool Area::isIntersectingWithOtherArea(Area* other)
 {
 	int x2 = this->x + this->width; 
@@ -84,6 +100,10 @@ bool Area::isIntersectingWithOtherArea(Area* other)
 	return (this->x < otherX2 && x2 > other->x && this->y < otherY2 && y2 > other->y);
 }
 
+/**
+ * @brief Gets one random point in the area. Must provide the mainParent (the parent of this area that doesn't have more parents)
+ *
+ */
 pair<int, int> Area::getRandomPointInArea(Area* mainParent)
 {
 	vector<pair<int, int>> tilesOccupied;

@@ -33,25 +33,19 @@ int test() {
 	prob2.maxNumberOfTilesToTransform = 8; 
 	addCellularProbability(prob1); 
 	addCellularProbability(prob2); 
-	Area* area = createCellularAutomataArea(1000, 1000, 0, 0, 8, 2); 
-	addCellularProbability(prob1);
-	addCellularProbability(prob2);
-	Area* area2 = createCellularAutomataArea(1000, 1000, 0, 0, 8, 2);
+	Area* area = createCellularAutomataArea(100, 100, 0, 0, 8, 2); 
+	
 
-	/*for (int j = 0; j < area->getHeight(); j++) {
+	for (int j = 0; j < area->getHeight(); j++) {
 		for (int x = 0; x < area->getWidth(); x++) {
 				printf("%i", (*area)[x][j]);
 		}
 
 		printf("\n");
 	}
-	*/
-	int x;
-	/*for (int i = 0; i < area->areasSize; i++) {
-		destroyArea(area->areas[i]); 
-	}*/
-	cout << "PEPO"; 
-	//delete area; 
+
+	
+	cout << "Finish" <<endl; 
 	destroyArea(area); 
 	return 9; 
 }

@@ -4,6 +4,10 @@
 
 using namespace std; 
 
+/**
+ * @brief Generates random noise in the provided area
+ *
+ */
 void RandomNoise::generate(Area* area)
 {
 	srand(time(0)); 

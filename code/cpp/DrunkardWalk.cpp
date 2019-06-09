@@ -4,18 +4,28 @@
 
 
 
-///Base configuration 
+/**
+ * @brief default constructor
+ *
+ */
 DrunkardWalk::DrunkardWalk()
 {
 	defaultConfiguration(); 
 }
 
+/**
+ * @brief default constructor that initialices the configuration with the provided number of iterations
+ *
+ */
 DrunkardWalk::DrunkardWalk(int iterations)
 {
 	defaultConfiguration(iterations); 
 }
 
-
+/**
+ * @brief auxiliar method to create the corridors between two child rooms
+ *
+ */
 void DrunkardWalk::generate(Area* area)
 {
 	int x = configuration.startPointX; 
@@ -61,6 +71,10 @@ void DrunkardWalk::generate(Area* area)
 	}
 }
 
+/**
+ * @brief configures the algorithm with the provided DrunkardWalkConfiguration pointer. Pointer will be deleted after use
+ *
+ */
 void DrunkardWalk::configure(void* data)
 {
 	initialConfigurationDone = false;
@@ -78,6 +92,10 @@ void DrunkardWalk::configure(void* data)
 	delete newConfig; 
 }
 
+/**
+ * @brief initial normalization of parameters before use on the generation. Only must be done once for generation for maximum performance
+ *
+ */
 void DrunkardWalk::initialConfigurationBeforeGeneration()
 {
 	//Initial Config
@@ -90,6 +108,9 @@ void DrunkardWalk::initialConfigurationBeforeGeneration()
 
 }
 
+/**
+ * @brief default Configuration of the algorithm if none provided
+ */
 void DrunkardWalk::defaultConfiguration(int iterations)
 {
 	initialConfigurationDone = false; 

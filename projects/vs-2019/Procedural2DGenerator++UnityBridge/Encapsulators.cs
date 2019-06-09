@@ -40,7 +40,7 @@ namespace Procedural2DGenerator
             public int tileToTransform;
         };
 
-
+        #region DLL imports from C++
         //Miscellaneous imports
         [DllImport("Procedural2DGenerator++", EntryPoint = "destroyArea")]
         private unsafe static extern void DestroyAreaUnsafe(AreaUnsafe* area);
@@ -86,6 +86,9 @@ namespace Procedural2DGenerator
         [DllImport("Procedural2DGenerator++", EntryPoint = "addCellularProbability")]
         private unsafe static extern void AddCellularProbability(CellularProbability prob);
 
+        #endregion
+
+        #region Area creation and conversion between unsafe and safe areas
         public unsafe static Area CreateArea(int width, int height, int x, int y)
         {
             AreaUnsafe* uArea = CreateUnsafeArea(width, height, x, y);
@@ -132,6 +135,10 @@ namespace Procedural2DGenerator
             }
             return uArea;
         }
+
+        #endregion
+
+        #region Algorithm C# interface
 
         public unsafe static Area CreateRandomNoiseArea(int width, int height, int x, int y)
         {
@@ -227,9 +234,10 @@ namespace Procedural2DGenerator
             return areaReturn;
         }
 
+        #endregion
     }
 
 
-  
+
 
 }

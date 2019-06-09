@@ -3,23 +3,40 @@
 #include <stdio.h>
 using namespace std; 
 
+
+/**
+ * @brief default constructor, initialices the iterations and number of tiles if none provided
+ *
+ */
 CellularAutomata::CellularAutomata()
 {
 	numberOfTiles = 2; 
 	this->iterations = 3;
 }
 
+/**
+ * @brief constructor with numberOfTIles used to the cellular automata and the iterations of the algorithm
+ *
+ */
 CellularAutomata::CellularAutomata(int numberOfTiles, int iterations)
 {
 	this->numberOfTiles = numberOfTiles;
 	this->iterations = iterations; 
 }
 
+/**
+ * @brief adds one probability to the actual configuration
+ *
+ */
 void CellularAutomata::addProbability(CellularProbability probability)
 {
 	configuration.cellularProbabilities.push_back(probability); 
 }
 
+/**
+ * @brief auxiliar method to get the neighbours array of the tile in (x,y) position
+ *
+ */
 int* CellularAutomata::getNeighbourInfo(Area* area, int x, int y)
 {
 	int* neighbours = new int[numberOfTiles];
@@ -41,6 +58,10 @@ int* CellularAutomata::getNeighbourInfo(Area* area, int x, int y)
 	return neighbours;
 }
 
+/**
+ * @brief Generates a Cellular automata algorithm in the provided area with the previously added configuration
+ *
+ */
 void CellularAutomata::generate(Area* area)
 {
 	RandomNoise noise = RandomNoise(numberOfTiles); 
@@ -71,6 +92,10 @@ void CellularAutomata::generate(Area* area)
 
 }
 
+/**
+ * @brief provides one CellularAutomataConfiguration pointer to set the configuration of the algorithm, pointer will be deleted after use
+ *
+ */
 void CellularAutomata::configure(void* data)
 {
 	CellularAutomataConfiguration* newConfig = (CellularAutomataConfiguration*)data;

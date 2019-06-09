@@ -5,12 +5,21 @@
 #include <iostream>
 
 using namespace std; 
+
+/**
+ * @brief Default constructor
+ *
+ */
 BSPDungeon::BSPDungeon():corridorGeneration()
 {
 	srand(time(0)); 
 	defaultConfiguration(); 
 }
 
+/**
+ * @brief Generates a BSP Dungeon with the provided area
+ *
+ */
 void BSPDungeon::generate(Area* area)
 {
 	generate(area, (rand() % (configuration.maxRooms - configuration.minRooms)) + configuration.minRooms ); //Random number between min and max
@@ -18,6 +27,10 @@ void BSPDungeon::generate(Area* area)
 	generateCorridors(area); 
 }
 
+/**
+ * @brief auxiliar method to generate the BSP algorithm
+ *
+ */
 void BSPDungeon::generate(Area* area, int childrenAsigned)
 {
 
@@ -75,15 +88,22 @@ void BSPDungeon::generate(Area* area, int childrenAsigned)
 }
 
 
+/**
+ * @brief auxiliar method to create the corridors between the BSP rooms
+ *
+ */
 void BSPDungeon::generateCorridors(Area* area)
 {
 	if (area->areasSize != 0) {
 		generateCorridorsBetweenAreas(area->areas[0], area->areas[1], area);
 
 	}
-
-
 }
+
+/**
+ * @brief auxiliar method to create the corridors between two child rooms
+ *
+ */
 void BSPDungeon::generateCorridorsBetweenAreas(Area* area1, Area* area2, Area* mainParent)
 {
 	
@@ -101,7 +121,10 @@ void BSPDungeon::generateCorridorsBetweenAreas(Area* area1, Area* area2, Area* m
 
 }
 
-
+/**
+ * @brief configure BSPDungeon algorithm with a BSPConfiguration struct pointer. Pointer will be deleted after this method
+ *
+ */
 void BSPDungeon::configure(void* data)
 {
 	BSPConfiguration* newConfig = (BSPConfiguration*)data;
@@ -112,6 +135,10 @@ void BSPDungeon::configure(void* data)
 	delete newConfig; 
 }
 
+/**
+ * @brief auxiliar method to create a default configuration if none provided
+ *
+ */
 void BSPDungeon::defaultConfiguration()
 {
 	configuration.maxRooms = 100; 

@@ -4,12 +4,20 @@
 
 using namespace std; 
 
+/**
+ * @brief default constructor for simple Dungeon 
+ *
+ */
 SimpleDungeon::SimpleDungeon(): corridorGeneration()
 {
 	srand(time(0)); 
 	defaultConfiguration(); 
 }
 
+/**
+ * @brief generates a simple dungeon algorithm in the provided area
+ *
+ */
 void SimpleDungeon::generate(Area* area)
 {
 	int width = configuration.maxWidth - configuration.minWidth; 
@@ -54,6 +62,11 @@ void SimpleDungeon::generate(Area* area)
 
 }
 
+
+/**
+ * @brief configures the algorithm with the provided SimpleDungeonConfiguration pointer. Pointer will be deleted after use
+ *
+ */
 void SimpleDungeon::configure(void* data)
 {
 	SimpleDungeonConfiguration* newConfig = (SimpleDungeonConfiguration*)data; 
@@ -67,6 +80,10 @@ void SimpleDungeon::configure(void* data)
 
 }
 
+/**
+ * @brief provides default configuration for the algorithm if none provided
+ *
+ */
 void SimpleDungeon::defaultConfiguration()
 {
 	configuration.maxHeight = 100; 
