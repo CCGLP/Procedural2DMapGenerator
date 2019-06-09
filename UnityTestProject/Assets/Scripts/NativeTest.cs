@@ -36,7 +36,11 @@ public class NativeTest : MonoBehaviour
         //Actual map creation ***************************************************************
         watch.Reset();
         watch.Start();
-        var map = Procedural2DHelper.CreateBSPDungeonArea(1000, 1000, 0, 0,3000,5300);
+        List<Procedural2DHelper.CellularProbability> probs = new List<Procedural2DHelper.CellularProbability>();
+        probs.Add(new Procedural2DHelper.CellularProbability() { neighbourTile = 0, tileToTransform = 1, minNumberOfTilesToTransform = 7, maxNumberOfTilesToTransform = 8 });
+        probs.Add(new Procedural2DHelper.CellularProbability() { neighbourTile = 1, tileToTransform = 1, minNumberOfTilesToTransform = 3, maxNumberOfTilesToTransform = 8 });
+        probs.Add(new Procedural2DHelper.CellularProbability() { neighbourTile = 0, tileToTransform = 0, minNumberOfTilesToTransform = 4, maxNumberOfTilesToTransform = 8 });
+        var map = Procedural2DHelper.CreateCellularAutomataArea(100, 100,probs.ToArray() , 0, 0,8,2); 
         watch.Stop();
         UnityEngine.Debug.Log("Time elapsed creating map: " + watch.ElapsedMilliseconds);
 

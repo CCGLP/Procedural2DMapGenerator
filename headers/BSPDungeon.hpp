@@ -1,5 +1,6 @@
 #pragma once
 #include "Generator.hpp"
+#include "CorridorGeneration.hpp"
 #include <utility>
 using namespace std; 
 
@@ -16,6 +17,7 @@ class BSPDungeon : Generator {
 
 private: 
 	BSPConfiguration configuration; 
+	CorridorGeneration corridorGeneration; 
 public:
 	BSPDungeon();
 	void generate(Area* area) override;

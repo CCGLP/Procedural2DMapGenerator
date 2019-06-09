@@ -5,7 +5,7 @@
 #include <iostream>
 
 using namespace std; 
-BSPDungeon::BSPDungeon()
+BSPDungeon::BSPDungeon():corridorGeneration()
 {
 	srand(time(0)); 
 	defaultConfiguration(); 
@@ -86,21 +86,8 @@ void BSPDungeon::generateCorridors(Area* area)
 }
 void BSPDungeon::generateCorridorsBetweenAreas(Area* area1, Area* area2, Area* mainParent)
 {
-	pair<int, int> tile1 = area1->getRandomPointInArea (mainParent);
-	pair<int, int> tile2 = area2->getRandomPointInArea (mainParent);
-
-	int xFactor =  tile2.first - tile1.first; 
-	xFactor = xFactor > 0 ? 1 : -1; 
-	int yFactor = tile2.second - tile1.second; 
-	yFactor = yFactor > 0 ? 1 : -1; 
-
-	int j = tile1.second; 
-	for (j = tile1.second; j != tile2.second; j += yFactor) {
-		(*mainParent)[tile1.first- mainParent->getX()][j - mainParent->getY()] = 1;
-	}
-	for (int i = tile1.first; i != tile2.first; i += xFactor) {
-		(*mainParent)[i - mainParent->getX()][j - mainParent->getY()] = 1;
-	}
+	
+	corridorGeneration.simpleCorridorWithRandomPoints(area1, area2, mainParent); 
 
 	
 

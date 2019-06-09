@@ -78,19 +78,51 @@ struct Area {
 		int getY() {
 			return y; 
 		}
+		bool isIntersectingWithOtherArea(Area* other); 
 
 
 
 		Area* addArea(int width, int height, int x, int y) {
-			Area** newAreas = new Area*[(areasSize+1)]; 
-			int i; 
-			for (i = 0;  i < areasSize; i++) {
-				newAreas[i] = areas[i]; 
+			Area* area = new Area(width, height, x, y); 
+			addArea(area);
+			return area; 
+		}
+
+		int** getTileInfoCopy() {
+			int** copy = new int*[width]; 
+			for (int i = 0; i < width; i++) {
+				copy[i] = new int[height]; 
+				for (int j = 0; j < height; j++) {
+					copy[i][j] = tileInfo[i][j]; 
+				}
 			}
-			newAreas[i] = new Area(width, height, x, y);
+			return copy; 
+		}
+
+		void copyTileContents(int** copy) {
+			for (int i = 0; i < width; i++) {
+				for (int j = 0; j < height; j++) {
+					tileInfo[i][j] = copy[i][j]; 
+				}
+			}
+		}
+
+		void addArea(Area* area) {
+			Area** newAreas = new Area * [(areasSize + 1)];
+			int i;
+			for (i = 0; i < areasSize; i++) {
+				newAreas[i] = areas[i];
+			}
+			newAreas[i] = area;
 			areasSize++;
-			areas = newAreas; 
-			return newAreas[i]; 
+			areas = newAreas;
+		}
+		void fillTiles(int value) {
+			for (int i = 0; i < width; i++) {
+				for (int j = 0; j < height; j++) {
+					tileInfo[i][j] = value; 
+				}
+			}
 		}
 		Area** getChildren() {
 			return areas; 

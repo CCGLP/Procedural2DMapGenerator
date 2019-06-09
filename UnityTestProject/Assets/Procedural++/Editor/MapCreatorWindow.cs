@@ -22,8 +22,9 @@ public class MapCreatorWindow : EditorWindow
     int minRooms = 4;
     int maxRooms = 10;
     int minWidth = 1;
-    int minHeight = 1; 
+    int minHeight = 1;
 
+    int tryRooms = 100, extraCorridors = 0, minWidthS = 1,maxWidth = 100, minHeightS = 1, maxHeight = 100; 
     [MenuItem("Tools/ProceduralGenerator++/MapCreator")]
     public static void ShowExample()
     {
@@ -71,7 +72,11 @@ public class MapCreatorWindow : EditorWindow
 
                 case MapType.BSPDungeon:
                     previousArea = Procedural2DHelper.CreateBSPDungeonArea((int)sliderX.value, (int)sliderY.value, 0, 0, minRooms, maxRooms, minWidth, minHeight); 
-                    break; 
+                    break;
+
+                case MapType.SimpleDungeon:
+                    previousArea = Procedural2DHelper.CreateSimpleDungeonArea((int)sliderX.value, (int)sliderY.value, 0, 0, tryRooms, extraCorridors, minWidthS, maxWidth, minHeightS, maxHeight);
+                    break;
             }
 
            
@@ -205,6 +210,9 @@ public class MapCreatorWindow : EditorWindow
 
                 case MapType.BSPDungeon:
                     BSPDungeonSwitch(); 
+                    break;
+                case MapType.SimpleDungeon:
+                    SimpleDungeonSwitch(); 
                     break; 
             }
         });
@@ -222,6 +230,75 @@ public class MapCreatorWindow : EditorWindow
         {
             parentMapSpecificData.RemoveAt(1); 
         }
+    }
+
+    private void SimpleDungeonSwitch()
+    {
+        RemoveChildsFromMapSpecificParent();
+        Slider tryRooms = new Slider(1, 1000);
+        Slider extraCorridors = new Slider(0, 1000);
+        Slider minWidth = new Slider(1, 700);
+        Slider minHeight = new Slider(1, 700);
+        Slider maxWidth = new Slider(10, 1000);
+        Slider maxHeight = new Slider(10, 1000);
+
+        tryRooms.value = this.tryRooms;
+        extraCorridors.value = this.extraCorridors;
+        minWidth.value = this.minWidthS;
+        minHeight.value = this.minHeightS;
+        maxWidth.value = this.maxWidth;
+        maxHeight.value = this.maxHeight;
+
+        tryRooms.label = "Rooms Try(" + this.tryRooms + ")";
+        extraCorridors.label = "Extra Corridors(" + this.extraCorridors + ")";
+        minWidth.label = "Min width(" + this.minWidthS + ")";
+        maxWidth.label = "Max Width(" + this.maxWidth + ")";
+        minHeight.label = "Min Height(" + this.minHeightS + ")";
+        maxHeight.label = "Max Height(" + this.maxHeight + ")";
+
+        tryRooms.RegisterValueChangedCallback((t) =>
+        {
+            this.tryRooms = (int)t.newValue;
+            tryRooms.label = "Rooms Try(" + this.tryRooms + ")"; 
+        });
+
+        extraCorridors.RegisterValueChangedCallback((t) =>
+        {
+            this.extraCorridors = (int)t.newValue;
+            extraCorridors.label = "Extra Corridors(" + this.extraCorridors + ")";
+        });
+
+        minWidth.RegisterValueChangedCallback((t) =>
+        {
+            this.minWidthS = (int)t.newValue;
+            minWidth.label = "Min width(" + this.minWidthS + ")";
+        });
+
+        maxWidth.RegisterValueChangedCallback((t) =>
+        {
+            this.maxWidth = (int)t.newValue;
+            maxWidth.label = "Max Width(" + this.maxWidth + ")";
+        });
+
+        minHeight.RegisterValueChangedCallback((t) =>
+        {
+            this.minHeightS = (int)t.newValue;
+            minHeight.label = "Min Height(" + this.minHeightS + ")";
+        });
+
+        maxHeight.RegisterValueChangedCallback((t) =>
+        {
+            this.maxHeight = (int)t.newValue;
+            maxHeight.label = "Max Height(" + this.maxHeight + ")";
+        });
+
+        parentMapSpecificData.Add(tryRooms);
+        parentMapSpecificData.Add(extraCorridors);
+        parentMapSpecificData.Add(minWidth);
+        parentMapSpecificData.Add(maxWidth);
+        parentMapSpecificData.Add(minHeight);
+        parentMapSpecificData.Add(maxHeight); 
+        
     }
     private void DrunkardEnumSwitch()
     {

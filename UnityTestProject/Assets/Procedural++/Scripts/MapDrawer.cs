@@ -8,7 +8,8 @@ public enum MapType
 {
     Drunkard,
     BSPDungeon,
-    RandomNoise
+    RandomNoise,
+    SimpleDungeon
 }
 public static class MapDrawer 
 {

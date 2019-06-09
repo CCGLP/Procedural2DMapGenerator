@@ -1,0 +1,79 @@
+#include "..\..\headers\CellularAutomata.hpp"
+#include "..\..\headers\RandomNoise.hpp"
+#include <stdio.h>
+using namespace std; 
+
+CellularAutomata::CellularAutomata()
+{
+	numberOfTiles = 2; 
+	this->iterations = 3;
+}
+
+CellularAutomata::CellularAutomata(int numberOfTiles, int iterations)
+{
+	this->numberOfTiles = numberOfTiles;
+	this->iterations = iterations; 
+}
+
+void CellularAutomata::addProbability(CellularProbability probability)
+{
+	configuration.cellularProbabilities.push_back(probability); 
+}
+
+int* CellularAutomata::getNeighbourInfo(Area* area, int x, int y)
+{
+	int* neighbours = new int[numberOfTiles];
+	for (int i = 0; i < numberOfTiles; i++) {
+		neighbours[i] = 0; 
+	}
+	int xMin = x > 0 ? x - 1 : x; 
+	int xMax = x < area->width - 1 ? x + 1 : x; 
+	int yMin = y > 0 ? y - 1 : y; 
+	int yMax = y < area->height - 1 ? y + 1 : y; 
+
+	for (int i = xMin; i <= xMax; i++) {
+		for (int j = yMin; j <= yMax; j++) {
+			if (j != y && x != i) {
+				neighbours[(*area)[i][j]] ++; 
+			}
+		}
+	}
+	return neighbours;
+}
+
+void CellularAutomata::generate(Area* area)
+{
+	RandomNoise noise = RandomNoise(numberOfTiles); 
+	noise.generate(area); 
+
+	for (int i = 0; i < iterations; i++) {
+		int** copy = area->getTileInfoCopy(); 
+		for (int x = 0; x < area->width; x++) {
+			for (int y = 0; y < area->height; y++) {
+				int* neighbours = getNeighbourInfo(area, x, y); 
+				for (int j = 0; j < configuration.cellularProbabilities.size(); j++) {
+					CellularProbability prob = configuration.cellularProbabilities[j];
+					if (neighbours[prob.neighbourTile] <= prob.maxNumberOfTilesToTransform && neighbours[prob.neighbourTile] >= prob.minNumberOfTilesToTransform) {
+						copy[x][y] = prob.tileToTransform; 
+						break; 
+					}
+				}
+				delete[] neighbours; 
+			}
+		}
+		area->copyTileContents(copy); 
+
+		for (int i = 0; i < area->width; i++) {
+			delete[] copy[i];
+		}
+		delete[]copy; 
+	}
+
+}
+
+void CellularAutomata::configure(void* data)
+{
+	CellularAutomataConfiguration* newConfig = (CellularAutomataConfiguration*)data;
+	configuration.cellularProbabilities = newConfig->cellularProbabilities; 
+	delete newConfig; 
+}

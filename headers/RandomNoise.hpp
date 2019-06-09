@@ -3,7 +3,11 @@
 
 
 class RandomNoise : public Generator {
+	private:
+		int tileQuantity; 
 
 	public:
-	void generate(Area* area) override;
+		RandomNoise() { tileQuantity = 2; };
+		RandomNoise(int tiles) { tileQuantity = tiles; };
+		void generate(Area* area) override;
 };

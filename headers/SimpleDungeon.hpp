@@ -1,8 +1,9 @@
 #pragma once
 #include "Generator.hpp"
-
+#include "CorridorGeneration.hpp"
 struct SimpleDungeonConfiguration {
 	int tryRoomEmplacements; 
+	int extraCorridors; 
 	int minWidth, maxWidth; 
 	int minHeight, maxHeight; 
 };
@@ -11,6 +12,7 @@ class SimpleDungeon : Generator {
 
 private: 
 	SimpleDungeonConfiguration configuration;
+	CorridorGeneration corridorGeneration; 
 
 public:
 	SimpleDungeon(); 

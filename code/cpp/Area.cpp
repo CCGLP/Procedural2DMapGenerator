@@ -73,6 +73,17 @@ void Area::processArea()
 
 }
 
+bool Area::isIntersectingWithOtherArea(Area* other)
+{
+	int x2 = this->x + this->width; 
+	int y2 = this->y + this->height; 
+
+	int otherX2 = other->x + other->width; 
+	int otherY2 = other->y + other->height; 
+
+	return (this->x < otherX2 && x2 > other->x && this->y < otherY2 && y2 > other->y);
+}
+
 pair<int, int> Area::getRandomPointInArea(Area* mainParent)
 {
 	vector<pair<int, int>> tilesOccupied;
