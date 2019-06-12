@@ -1,6 +1,7 @@
 #include "..\..\headers\Area.hpp"
 #include <iostream>
 #include <time.h>
+
 using namespace std; 
 
 
@@ -118,8 +119,9 @@ pair<int, int> Area::getRandomPointInArea(Area* mainParent)
 			}
 		}
 	}
-
-	pair<int, int> randValue = tilesOccupied[rand() % tilesOccupied.size()];
+	int aux = rand() % tilesOccupied.size(); 
+	//cout << "Size: " << tilesOccupied.size() << "   random: " << aux << endl; 
+	pair<int, int> randValue = tilesOccupied[rand()];
 	return randValue;
 }
 

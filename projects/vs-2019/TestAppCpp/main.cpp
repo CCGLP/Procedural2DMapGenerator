@@ -20,7 +20,7 @@ int main() {
 int test() {
 
 	
-	Area* area = createLineMapArea(100, 100, 0, 0,10,30, 20); 
+	Area* area = createLineMapArea(1000, 1000, 0, 0,50,500, 500); 
 	
 
 	for (int j = 0; j < area->getHeight(); j++) {
@@ -28,7 +28,7 @@ int test() {
 				printf("%i", (*area)[x][j]);
 		}
 
-		printf("\n");
+		printf("\n");printf("\n");printf("\n");
 	}
 
 	

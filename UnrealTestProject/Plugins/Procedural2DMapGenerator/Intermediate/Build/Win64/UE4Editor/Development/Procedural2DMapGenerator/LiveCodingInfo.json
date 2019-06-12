@@ -1,0 +1,13 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.Procedural2DMapGenerator.cpp.obj": [
+			"Procedural2DMapGenerator.cpp.obj",
+			"Procedural2DMapGeneratorBPLibrary.cpp.obj"
+		],
+		"Module.Procedural2DMapGenerator.gen.cpp.obj": [
+			"Procedural2DMapGenerator.init.gen.cpp.obj",
+			"Procedural2DMapGeneratorBPLibrary.gen.cpp.obj"
+		]
+	}
+}
