@@ -31,7 +31,7 @@ namespace Procedural2DGenerator
             public AreaUnsafe** areas;
             public int areasCount;
         }
-        [StructLayout(LayoutKind.Sequential)]
+        [StructLayout(LayoutKind.Sequential)][System.Serializable]
         public struct CellularProbability
         {
             public int neighbourTile;
@@ -85,6 +85,12 @@ namespace Procedural2DGenerator
         private unsafe static extern void GenerateCellularAutomataAreaUnsafe(AreaUnsafe* area, int iterations = 3, int numberOfTiles = 2);
         [DllImport("Procedural2DGenerator++", EntryPoint = "addCellularProbability")]
         private unsafe static extern void AddCellularProbability(CellularProbability prob);
+
+        [DllImport("Procedural2DGenerator++", EntryPoint = "createLineMapArea")]
+        private unsafe static extern AreaUnsafe* CreateUnsafeLineMapArea(int width, int height, int x, int y, int extraLines = 10, int branchQuantity = 100, int branchLength = 300);
+
+        [DllImport("Procedural2DGenerator++", EntryPoint = "generateLineMapInArea")]
+        private unsafe static extern void GenerateLineMapAreaUnsafe(AreaUnsafe* area, int extraLines = 10, int branchQuantity = 100, int branchLength = 300);
 
         #endregion
 
@@ -229,6 +235,24 @@ namespace Procedural2DGenerator
             }
             AreaUnsafe* unsafeArea = ConvertSafeToUnsafe(area);
             GenerateCellularAutomataAreaUnsafe(unsafeArea, iterations, numberOfTiles);
+            Area areaReturn = ConvertUnsafeToSafe(unsafeArea);
+            DestroyAreaUnsafe(unsafeArea);
+            return areaReturn;
+        }
+
+        public unsafe static Area CreateLineMapArea(int width, int height, int x = 0, int y = 0, int extraLines = 10, int branchQuantity = 100, int branchLength = 300)
+        {
+
+            AreaUnsafe* areaUnsafe = CreateUnsafeLineMapArea(width, height, x, y, extraLines, branchQuantity, branchLength);
+            Area area = ConvertUnsafeToSafe(areaUnsafe);
+            DestroyAreaUnsafe(areaUnsafe);
+            return area;
+        }
+
+        public unsafe static Area GenerateLineMapInArea(Area area, int extraLines = 10, int branchQuantity = 100, int branchLength = 300)
+        {
+            AreaUnsafe* unsafeArea = ConvertSafeToUnsafe(area);
+            GenerateLineMapAreaUnsafe(unsafeArea, extraLines, branchQuantity, branchLength);
             Area areaReturn = ConvertUnsafeToSafe(unsafeArea);
             DestroyAreaUnsafe(unsafeArea);
             return areaReturn;

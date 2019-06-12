@@ -34,6 +34,10 @@ extern "C" {
 	PROCEDURAL_2D_API void addCellularProbability(CellularProbability value); 
 	PROCEDURAL_2D_API Area* createCellularAutomataArea(int width, int height, int x = 0, int y = 0, int iterations = 3, int numberOfTiles = 2);
 	PROCEDURAL_2D_API void generateCellularAutomataInArea(Area* area, int iterations = 3, int numberOfTiles = 2);
+
+	//Linear Map
+	PROCEDURAL_2D_API Area* createLineMapArea(int width, int height, int x = 0, int y = 0, int extraLines = 10, int branchQuantity = 100, int branchLength = 300);
+	PROCEDURAL_2D_API void generateLineMapInArea(Area* area, int extraLines = 10, int branchQuantity = 100, int branchLength = 300);
 }
 
 

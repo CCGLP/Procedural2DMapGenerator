@@ -24,6 +24,10 @@ public class MapCreatorWindow : EditorWindow
     int minWidth = 1;
     int minHeight = 1;
 
+    int cellularIterations = 2;
+    int tilesNumber = 2;
+    CellularConfigurationObject cellularConfiguration; 
+
     int tryRooms = 100, extraCorridors = 0, minWidthS = 1,maxWidth = 100, minHeightS = 1, maxHeight = 100; 
     [MenuItem("Tools/ProceduralGenerator++/MapCreator")]
     public static void ShowExample()
@@ -76,6 +80,10 @@ public class MapCreatorWindow : EditorWindow
 
                 case MapType.SimpleDungeon:
                     previousArea = Procedural2DHelper.CreateSimpleDungeonArea((int)sliderX.value, (int)sliderY.value, 0, 0, tryRooms, extraCorridors, minWidthS, maxWidth, minHeightS, maxHeight);
+                    break;
+
+                case MapType.CellularAutomata:
+                    previousArea = Procedural2DHelper.CreateCellularAutomataArea((int)sliderX.value, (int)sliderY.value, cellularConfiguration.probabilities.ToArray(), 0, 0, cellularConfiguration.iterations, cellularConfiguration.numberOfTIles); 
                     break;
             }
 
@@ -213,7 +221,11 @@ public class MapCreatorWindow : EditorWindow
                     break;
                 case MapType.SimpleDungeon:
                     SimpleDungeonSwitch(); 
-                    break; 
+                    break;
+
+                case MapType.CellularAutomata:
+                    CellularAutomataSwitch(); 
+                    break;
             }
         });
 
@@ -221,7 +233,7 @@ public class MapCreatorWindow : EditorWindow
     }
 
 
-
+  
 
     private void RemoveChildsFromMapSpecificParent()
     {
@@ -232,6 +244,44 @@ public class MapCreatorWindow : EditorWindow
         }
     }
 
+    private void CellularAutomataSwitch()
+    {
+        RemoveChildsFromMapSpecificParent();
+        Slider iterations = new Slider(1, 64);
+        Slider tilesNumber = new Slider(2, 10);
+        ObjectField dataScriptable = new ObjectField();
+        iterations.value = 2;
+        tilesNumber.value = 2;
+        dataScriptable.objectType = typeof(CellularConfigurationObject);
+        dataScriptable.allowSceneObjects = false;
+
+        iterations.label = "Iterations(2)";
+        tilesNumber.label = "Number of tiles (2)";
+        dataScriptable.label = "Cellular Data";
+
+        iterations.RegisterValueChangedCallback((t) =>
+        {
+            cellularIterations = (int)t.newValue;
+            iterations.label = "Iterations(" + cellularIterations + ")"; 
+        });
+
+        tilesNumber.RegisterValueChangedCallback((t) =>
+        {
+            this.tilesNumber = (int)t.newValue;
+            tilesNumber.label = "Number of tiles (" + this.tilesNumber + ")"; 
+        });
+
+        dataScriptable.RegisterValueChangedCallback((t) =>
+        {
+            this.cellularConfiguration = (CellularConfigurationObject)t.newValue; 
+        });
+
+        parentMapSpecificData.Add(iterations);
+        parentMapSpecificData.Add(tilesNumber);
+        parentMapSpecificData.Add(dataScriptable); 
+
+        
+    }
     private void SimpleDungeonSwitch()
     {
         RemoveChildsFromMapSpecificParent();

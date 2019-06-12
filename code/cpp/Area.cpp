@@ -1,6 +1,8 @@
 #include "..\..\headers\Area.hpp"
 #include <iostream>
+#include <time.h>
 using namespace std; 
+
 
 
 /**
@@ -11,7 +13,6 @@ Area::Area(int width, int height, int x, int y)
 {
 	this->width = width; 
 	this->height = height; 
-
 	this->x = x; 
 	this->y = y; 
 

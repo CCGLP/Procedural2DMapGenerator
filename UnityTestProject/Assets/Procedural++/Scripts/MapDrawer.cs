@@ -4,13 +4,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps; 
 using Procedural2DGenerator; 
 
-public enum MapType
-{
-    Drunkard,
-    BSPDungeon,
-    RandomNoise,
-    SimpleDungeon
-}
+
 public static class MapDrawer 
 {
 

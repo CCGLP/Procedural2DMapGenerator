@@ -19,21 +19,8 @@ int main() {
 
 int test() {
 
-	CellularProbability prob1;
-	CellularProbability prob2; 
-
-	prob1.tileToTransform = 0; 
-	prob1.neighbourTile = 0; 
-	prob1.minNumberOfTilesToTransform = 4;
-	prob1.maxNumberOfTilesToTransform = 8; 
-
-	prob2.tileToTransform = 1;
-	prob2.neighbourTile = 1; 
-	prob2.minNumberOfTilesToTransform = 3; 
-	prob2.maxNumberOfTilesToTransform = 8; 
-	addCellularProbability(prob1); 
-	addCellularProbability(prob2); 
-	Area* area = createCellularAutomataArea(100, 100, 0, 0, 8, 2); 
+	
+	Area* area = createLineMapArea(100, 100, 0, 0,10,30, 20); 
 	
 
 	for (int j = 0; j < area->getHeight(); j++) {

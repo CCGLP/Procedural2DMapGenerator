@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69c67eb7706e28845a36db522911e404, type: 3}
+  m_Name: CellularConfiguration
+  m_EditorClassIdentifier: 
+  probabilities:
+  - neighbourTile: 1
+    minNumberOfTilesToTransform: 3
+    maxNumberOfTilesToTransform: 8
+    tileToTransform: 1
+  - neighbourTile: 0
+    minNumberOfTilesToTransform: 4
+    maxNumberOfTilesToTransform: 8
+    tileToTransform: 0
+  - neighbourTile: 0
+    minNumberOfTilesToTransform: 6
+    maxNumberOfTilesToTransform: 8
+    tileToTransform: 1
+  iterations: 4
+  numberOfTIles: 2

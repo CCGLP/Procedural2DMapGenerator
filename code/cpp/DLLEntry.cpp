@@ -4,7 +4,7 @@
 #include "..\..\headers\BSPDungeon.hpp"
 #include "..\..\headers\SimpleDungeon.hpp"
 #include "..\..\headers\CellularAutomata.hpp"
-
+#include "..\..\headers\LineMap.hpp"
 
 /**
  * @brief Deletes the provided area pointer. Use this after using the data will avoid memory leaks
@@ -164,6 +164,25 @@ PROCEDURAL_2D_API void generateCellularAutomataInArea(Area* area, int iterations
 	CellularAutomata generator(numberOfTiles, iterations);
 	generator.configure(cellular); 
 	cellular = nullptr; 
+	generator.generate(area); 
+
+}
+
+PROCEDURAL_2D_API Area* createLineMapArea(int width, int height, int x, int y, int extraLines, int branchQuantity, int branchLength)
+{
+	Area* area = createEmptyArea(width, height, x, y); 
+	generateLineMapInArea(area, extraLines, branchQuantity, branchLength); 
+	return area; 
+}
+
+PROCEDURAL_2D_API void generateLineMapInArea(Area* area, int extraLines, int branchQuantity, int branchLength)
+{
+	LineMap generator;
+	LineMapConfiguration* configuration = new LineMapConfiguration(); 
+	configuration->branchLength = branchLength;
+	configuration->branchQuantity = branchQuantity;
+	configuration->extraLines = extraLines; 
+	generator.configure(configuration);
 	generator.generate(area); 
 
 }
