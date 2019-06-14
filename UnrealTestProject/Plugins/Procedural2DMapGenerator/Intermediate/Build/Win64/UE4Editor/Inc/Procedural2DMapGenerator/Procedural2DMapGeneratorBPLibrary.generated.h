@@ -8,6 +8,7 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UPaperTileMapComponent;
 #ifdef PROCEDURAL2DMAPGENERATOR_Procedural2DMapGeneratorBPLibrary_generated_h
 #error "Procedural2DMapGeneratorBPLibrary.generated.h already included, missing '#pragma once' in Procedural2DMapGeneratorBPLibrary.h"
 #endif
@@ -15,24 +16,44 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #define UnrealTestProject_Plugins_Procedural2DMapGenerator_Source_Procedural2DMapGenerator_Public_Procedural2DMapGeneratorBPLibrary_h_28_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execProcedural2DMapGeneratorGetDrunkardMap) \
+	{ \
+		P_GET_OBJECT(UPaperTileMapComponent,Z_Param_Actor); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		UProcedural2DMapGeneratorBPLibrary::Procedural2DMapGeneratorGetDrunkardMap(Z_Param_Actor); \
+		P_NATIVE_END; \
+	} \
+ \
 	DECLARE_FUNCTION(execProcedural2DMapGeneratorSampleFunction) \
 	{ \
 		P_GET_PROPERTY(UFloatProperty,Z_Param_Param); \
+		P_GET_PROPERTY(UFloatProperty,Z_Param_Param1); \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		*(float*)Z_Param__Result=UProcedural2DMapGeneratorBPLibrary::Procedural2DMapGeneratorSampleFunction(Z_Param_Param); \
+		*(float*)Z_Param__Result=UProcedural2DMapGeneratorBPLibrary::Procedural2DMapGeneratorSampleFunction(Z_Param_Param,Z_Param_Param1); \
 		P_NATIVE_END; \
 	}
 
 
 #define UnrealTestProject_Plugins_Procedural2DMapGenerator_Source_Procedural2DMapGenerator_Public_Procedural2DMapGeneratorBPLibrary_h_28_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execProcedural2DMapGeneratorGetDrunkardMap) \
+	{ \
+		P_GET_OBJECT(UPaperTileMapComponent,Z_Param_Actor); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		UProcedural2DMapGeneratorBPLibrary::Procedural2DMapGeneratorGetDrunkardMap(Z_Param_Actor); \
+		P_NATIVE_END; \
+	} \
+ \
 	DECLARE_FUNCTION(execProcedural2DMapGeneratorSampleFunction) \
 	{ \
 		P_GET_PROPERTY(UFloatProperty,Z_Param_Param); \
+		P_GET_PROPERTY(UFloatProperty,Z_Param_Param1); \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		*(float*)Z_Param__Result=UProcedural2DMapGeneratorBPLibrary::Procedural2DMapGeneratorSampleFunction(Z_Param_Param); \
+		*(float*)Z_Param__Result=UProcedural2DMapGeneratorBPLibrary::Procedural2DMapGeneratorSampleFunction(Z_Param_Param,Z_Param_Param1); \
 		P_NATIVE_END; \
 	}
 

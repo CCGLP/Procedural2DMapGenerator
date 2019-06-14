@@ -4,4 +4,8 @@ D:\Miscelanea\Unreal\UE_4.22\Engine\Source\Runtime\CoreUObject\Public\UObject/Ge
 D:\Miscelanea\Unreal\UE_4.22\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
 D:\Miscelanea\Procedural2DMapGenerator\UnrealTestProject\Plugins\Procedural2DMapGenerator\Intermediate\Build\Win64\UE4Editor\Inc\Procedural2DMapGenerator\Procedural2DMapGeneratorBPLibrary.gen.cpp
 D:\Miscelanea\Procedural2DMapGenerator\UnrealTestProject\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator/Public/Procedural2DMapGeneratorBPLibrary.h
+D:\Miscelanea\Unreal\UE_4.22\Engine\Plugins\2D\Paper2D\Source\Paper2D\Classes\PaperTileMapComponent.h
+D:\Miscelanea\Unreal\UE_4.22\Engine\Plugins\2D\Paper2D\Source\Paper2D\Classes\PaperTileLayer.h
+D:\Miscelanea\Unreal\UE_4.22\Engine\Plugins\2D\Paper2D\Intermediate\Build\Win64\UE4Editor\Inc\Paper2D\PaperTileLayer.generated.h
+D:\Miscelanea\Unreal\UE_4.22\Engine\Plugins\2D\Paper2D\Intermediate\Build\Win64\UE4Editor\Inc\Paper2D\PaperTileMapComponent.generated.h
 D:\Miscelanea\Procedural2DMapGenerator\UnrealTestProject\Plugins\Procedural2DMapGenerator\Intermediate\Build\Win64\UE4Editor\Inc\Procedural2DMapGenerator\Procedural2DMapGeneratorBPLibrary.generated.h

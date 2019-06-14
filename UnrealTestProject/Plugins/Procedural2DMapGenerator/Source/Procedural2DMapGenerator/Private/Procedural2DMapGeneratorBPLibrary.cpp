@@ -9,8 +9,15 @@ UProcedural2DMapGeneratorBPLibrary::UProcedural2DMapGeneratorBPLibrary(const FOb
 
 }
 
-float UProcedural2DMapGeneratorBPLibrary::Procedural2DMapGeneratorSampleFunction(float Param)
+float UProcedural2DMapGeneratorBPLibrary::Procedural2DMapGeneratorSampleFunction(float Param, float Param1)
 {
 	return -1;
+}
+
+void UProcedural2DMapGeneratorBPLibrary::Procedural2DMapGeneratorGetDrunkardMap(UPaperTileMapComponent* actor)
+{
+	float x = 0; 
+
+	x += 2; 
 }
 

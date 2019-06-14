@@ -431,6 +431,11 @@
 /I D:\Miscelanea\Procedural2DMapGenerator\UnrealTestProject\Plugins\Procedural2DMapGenerator\Source
 /I D:\Miscelanea\Procedural2DMapGenerator\UnrealTestProject\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public
 /I D:\Miscelanea\Procedural2DMapGenerator\UnrealTestProject\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator
+/I ..\Plugins\2D\Paper2D\Intermediate\Build\Win64\UE4Editor\Inc\Paper2D
+/I ..\Plugins\2D\Paper2D\Source
+/I ..\Plugins\2D\Paper2D\Source\Paper2D\Classes
+/I ..\Plugins\2D\Paper2D\Source\Paper2D\Public
+/I ..\Plugins\2D\Paper2D\Source\Paper2D
 /I "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\INCLUDE"
 /I "C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6\include\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt"

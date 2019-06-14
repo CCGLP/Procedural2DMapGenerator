@@ -17,24 +17,72 @@ void EmptyLinkFunctionForGeneratedCodeProcedural2DMapGeneratorBPLibrary() {}
 	PROCEDURAL2DMAPGENERATOR_API UClass* Z_Construct_UClass_UProcedural2DMapGeneratorBPLibrary();
 	ENGINE_API UClass* Z_Construct_UClass_UBlueprintFunctionLibrary();
 	UPackage* Z_Construct_UPackage__Script_Procedural2DMapGenerator();
+	PROCEDURAL2DMAPGENERATOR_API UFunction* Z_Construct_UFunction_UProcedural2DMapGeneratorBPLibrary_Procedural2DMapGeneratorGetDrunkardMap();
+	PAPER2D_API UClass* Z_Construct_UClass_UPaperTileMapComponent_NoRegister();
 	PROCEDURAL2DMAPGENERATOR_API UFunction* Z_Construct_UFunction_UProcedural2DMapGeneratorBPLibrary_Procedural2DMapGeneratorSampleFunction();
 // End Cross Module References
 	void UProcedural2DMapGeneratorBPLibrary::StaticRegisterNativesUProcedural2DMapGeneratorBPLibrary()
 	{
 		UClass* Class = UProcedural2DMapGeneratorBPLibrary::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "Procedural2DMapGeneratorGetDrunkardMap", &UProcedural2DMapGeneratorBPLibrary::execProcedural2DMapGeneratorGetDrunkardMap },
 			{ "Procedural2DMapGeneratorSampleFunction", &UProcedural2DMapGeneratorBPLibrary::execProcedural2DMapGeneratorSampleFunction },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_UProcedural2DMapGeneratorBPLibrary_Procedural2DMapGeneratorGetDrunkardMap_Statics
+	{
+		struct Procedural2DMapGeneratorBPLibrary_eventProcedural2DMapGeneratorGetDrunkardMap_Parms
+		{
+			UPaperTileMapComponent* Actor;
+		};
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Actor_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Actor;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UProcedural2DMapGeneratorBPLibrary_Procedural2DMapGeneratorGetDrunkardMap_Statics::NewProp_Actor_MetaData[] = {
+		{ "EditInline", "true" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UProcedural2DMapGeneratorBPLibrary_Procedural2DMapGeneratorGetDrunkardMap_Statics::NewProp_Actor = { "Actor", nullptr, (EPropertyFlags)0x0010000000080080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(Procedural2DMapGeneratorBPLibrary_eventProcedural2DMapGeneratorGetDrunkardMap_Parms, Actor), Z_Construct_UClass_UPaperTileMapComponent_NoRegister, METADATA_PARAMS(Z_Construct_UFunction_UProcedural2DMapGeneratorBPLibrary_Procedural2DMapGeneratorGetDrunkardMap_Statics::NewProp_Actor_MetaData, ARRAY_COUNT(Z_Construct_UFunction_UProcedural2DMapGeneratorBPLibrary_Procedural2DMapGeneratorGetDrunkardMap_Statics::NewProp_Actor_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UProcedural2DMapGeneratorBPLibrary_Procedural2DMapGeneratorGetDrunkardMap_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UProcedural2DMapGeneratorBPLibrary_Procedural2DMapGeneratorGetDrunkardMap_Statics::NewProp_Actor,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UProcedural2DMapGeneratorBPLibrary_Procedural2DMapGeneratorGetDrunkardMap_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Procedural2DMapGeneratorTesting" },
+		{ "DisplayName", "Create DrunkardWalkMap" },
+		{ "Keywords", "Drunkard Walk Algorithm" },
+		{ "ModuleRelativePath", "Public/Procedural2DMapGeneratorBPLibrary.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UProcedural2DMapGeneratorBPLibrary_Procedural2DMapGeneratorGetDrunkardMap_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UProcedural2DMapGeneratorBPLibrary, nullptr, "Procedural2DMapGeneratorGetDrunkardMap", sizeof(Procedural2DMapGeneratorBPLibrary_eventProcedural2DMapGeneratorGetDrunkardMap_Parms), Z_Construct_UFunction_UProcedural2DMapGeneratorBPLibrary_Procedural2DMapGeneratorGetDrunkardMap_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UFunction_UProcedural2DMapGeneratorBPLibrary_Procedural2DMapGeneratorGetDrunkardMap_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04022401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UProcedural2DMapGeneratorBPLibrary_Procedural2DMapGeneratorGetDrunkardMap_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_UProcedural2DMapGeneratorBPLibrary_Procedural2DMapGeneratorGetDrunkardMap_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UProcedural2DMapGeneratorBPLibrary_Procedural2DMapGeneratorGetDrunkardMap()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_UProcedural2DMapGeneratorBPLibrary_Procedural2DMapGeneratorGetDrunkardMap_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_UProcedural2DMapGeneratorBPLibrary_Procedural2DMapGeneratorSampleFunction_Statics
 	{
 		struct Procedural2DMapGeneratorBPLibrary_eventProcedural2DMapGeneratorSampleFunction_Parms
 		{
 			float Param;
+			float Param1;
 			float ReturnValue;
 		};
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Param1;
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Param;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
@@ -43,9 +91,11 @@ void EmptyLinkFunctionForGeneratedCodeProcedural2DMapGeneratorBPLibrary() {}
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_UProcedural2DMapGeneratorBPLibrary_Procedural2DMapGeneratorSampleFunction_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(Procedural2DMapGeneratorBPLibrary_eventProcedural2DMapGeneratorSampleFunction_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_UProcedural2DMapGeneratorBPLibrary_Procedural2DMapGeneratorSampleFunction_Statics::NewProp_Param1 = { "Param1", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(Procedural2DMapGeneratorBPLibrary_eventProcedural2DMapGeneratorSampleFunction_Parms, Param1), METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_UProcedural2DMapGeneratorBPLibrary_Procedural2DMapGeneratorSampleFunction_Statics::NewProp_Param = { "Param", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(Procedural2DMapGeneratorBPLibrary_eventProcedural2DMapGeneratorSampleFunction_Parms, Param), METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UProcedural2DMapGeneratorBPLibrary_Procedural2DMapGeneratorSampleFunction_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UProcedural2DMapGeneratorBPLibrary_Procedural2DMapGeneratorSampleFunction_Statics::NewProp_ReturnValue,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UProcedural2DMapGeneratorBPLibrary_Procedural2DMapGeneratorSampleFunction_Statics::NewProp_Param1,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UProcedural2DMapGeneratorBPLibrary_Procedural2DMapGeneratorSampleFunction_Statics::NewProp_Param,
 	};
 #if WITH_METADATA
@@ -85,7 +135,8 @@ void EmptyLinkFunctionForGeneratedCodeProcedural2DMapGeneratorBPLibrary() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_Procedural2DMapGenerator,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UProcedural2DMapGeneratorBPLibrary_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UProcedural2DMapGeneratorBPLibrary_Procedural2DMapGeneratorSampleFunction, "Procedural2DMapGeneratorSampleFunction" }, // 3551300286
+		{ &Z_Construct_UFunction_UProcedural2DMapGeneratorBPLibrary_Procedural2DMapGeneratorGetDrunkardMap, "Procedural2DMapGeneratorGetDrunkardMap" }, // 4069059364
+		{ &Z_Construct_UFunction_UProcedural2DMapGeneratorBPLibrary_Procedural2DMapGeneratorSampleFunction, "Procedural2DMapGeneratorSampleFunction" }, // 2419909728
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UProcedural2DMapGeneratorBPLibrary_Statics::Class_MetaDataParams[] = {
@@ -121,7 +172,7 @@ void EmptyLinkFunctionForGeneratedCodeProcedural2DMapGeneratorBPLibrary() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UProcedural2DMapGeneratorBPLibrary, 3657372099);
+	IMPLEMENT_CLASS(UProcedural2DMapGeneratorBPLibrary, 718447206);
 	template<> PROCEDURAL2DMAPGENERATOR_API UClass* StaticClass<UProcedural2DMapGeneratorBPLibrary>()
 	{
 		return UProcedural2DMapGeneratorBPLibrary::StaticClass();

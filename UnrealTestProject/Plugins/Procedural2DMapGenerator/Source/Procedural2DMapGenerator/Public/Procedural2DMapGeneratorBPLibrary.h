@@ -1,10 +1,9 @@
 // Copyright 1998-2019 Epic Games, Inc. All Rights Reserved.
 
 #pragma once
-
+#include "PaperTileMapComponent.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "Procedural2DMapGeneratorBPLibrary.generated.h"
-
 /* 
 *	Function library class.
 *	Each function in it is expected to be static and represents blueprint node that can be called in any blueprint.
@@ -22,11 +21,16 @@
 *	For more info on custom blueprint nodes visit documentation:
 *	https://wiki.unrealengine.com/Custom_Blueprint_Node_Creation
 */
+
 UCLASS()
 class UProcedural2DMapGeneratorBPLibrary : public UBlueprintFunctionLibrary
 {
 	GENERATED_UCLASS_BODY()
 
 	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Execute Sample function", Keywords = "Procedural2DMapGenerator sample test testing"), Category = "Procedural2DMapGeneratorTesting")
-	static float Procedural2DMapGeneratorSampleFunction(float Param);
+	static float Procedural2DMapGeneratorSampleFunction(float Param, float Param1);
+
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Create DrunkardWalkMap", Keywords = "Drunkard Walk Algorithm"), Category = "Procedural2DMapGeneratorTesting")
+	static void Procedural2DMapGeneratorGetDrunkardMap(UPaperTileMapComponent* Actor);
+
 };

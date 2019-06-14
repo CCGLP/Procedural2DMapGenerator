@@ -3,7 +3,17 @@
 	{
 		"Module.Procedural2DMapGenerator.cpp.obj": [
 			"Procedural2DMapGenerator.cpp.obj",
-			"Procedural2DMapGeneratorBPLibrary.cpp.obj"
+			"Procedural2DMapGeneratorBPLibrary.cpp.obj",
+			"Area.cpp.obj",
+			"BSPDungeon.cpp.obj",
+			"CellularAutomata.cpp.obj",
+			"CorridorGeneration.cpp.obj",
+			"DLLEntry.cpp.obj",
+			"DrunkardWalk.cpp.obj",
+			"Generator.cpp.obj",
+			"LineMap.cpp.obj",
+			"RandomNoise.cpp.obj",
+			"SimpleDungeon.cpp.obj"
 		],
 		"Module.Procedural2DMapGenerator.gen.cpp.obj": [
 			"Procedural2DMapGenerator.init.gen.cpp.obj",

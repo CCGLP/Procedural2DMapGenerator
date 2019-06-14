@@ -73,8 +73,8 @@ void Area::processArea()
 			area->processArea(); 
 		}
 
-		int p; 
-		int j;
+		int p = 0; 
+		int j = 0;
 		for (int x = area->x, p = 0; x < areaWidth; x++,p ++) { 
 			for (int y = area->y, j = 0; y < areaHeight; y++, j++) {
 				tileInfo[x-this->x][y-this->y] = (*area)[p][j]; 

@@ -1,6 +1,6 @@
 #pragma once
 
-class Area; 
+struct Area; 
 class Generator {
 
 	public:
