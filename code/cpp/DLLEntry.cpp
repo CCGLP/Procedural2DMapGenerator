@@ -142,7 +142,7 @@ PROCEDURAL_2D_API void addCellularProbability(CellularProbability value)
 	if (cellular == nullptr) {
 		cellular = new CellularAutomataConfiguration();
 	}
-	cellular->cellularProbabilities.push_back(value); 
+	cellular->addProbability(value); 
 }
 /**
  * @brief Creates an area and generates a Cellular Automata map with the previously added probabilities and the iterations and tiles specified 
@@ -162,9 +162,11 @@ PROCEDURAL_2D_API Area* createCellularAutomataArea(int width, int height, int x,
 PROCEDURAL_2D_API void generateCellularAutomataInArea(Area* area, int iterations, int numberOfTiles)
 {
 	CellularAutomata generator(numberOfTiles, iterations);
+
 	generator.configure(cellular); 
-	cellular = nullptr; 
+
 	generator.generate(area); 
+	cellular = nullptr;
 
 }
 

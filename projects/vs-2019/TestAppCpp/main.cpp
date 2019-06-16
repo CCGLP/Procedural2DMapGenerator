@@ -19,8 +19,9 @@ int main() {
 
 int test() {
 
-	
-	Area* area = createLineMapArea(1000, 1000, 0, 0,50,500, 500); 
+
+
+	Area* area = createBSPDungeonArea(200, 200, 0, 0, 10, 100, 2, 2); 
 	
 
 	for (int j = 0; j < area->getHeight(); j++) {
@@ -31,7 +32,6 @@ int test() {
 		printf("\n");printf("\n");printf("\n");
 	}
 
-	
 	cout << "Finish" <<endl; 
 	destroyArea(area); 
 	return 9; 

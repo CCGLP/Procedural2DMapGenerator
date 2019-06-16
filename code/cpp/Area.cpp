@@ -121,7 +121,7 @@ pair<int, int> Area::getRandomPointInArea(Area* mainParent)
 	}
 	int aux = rand() % tilesOccupied.size(); 
 	//cout << "Size: " << tilesOccupied.size() << "   random: " << aux << endl; 
-	pair<int, int> randValue = tilesOccupied[rand()];
+	pair<int, int> randValue = tilesOccupied[aux];
 	return randValue;
 }
 

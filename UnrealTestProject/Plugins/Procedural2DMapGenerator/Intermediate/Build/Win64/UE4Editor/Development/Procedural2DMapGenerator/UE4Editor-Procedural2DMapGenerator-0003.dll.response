@@ -65,6 +65,7 @@
 "D:\Miscelanea\Unreal\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Development\Slate\UE4Editor-Slate.lib"
 "D:\Miscelanea\Unreal\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Development\SlateCore\UE4Editor-SlateCore.lib"
 "D:\Miscelanea\Unreal\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Development\Core\UE4Editor-Core.lib"
+"D:\Miscelanea\Unreal\UE_4.22\Engine\Plugins\2D\Paper2D\Intermediate\Build\Win64\UE4Editor\Development\Paper2D\UE4Editor-Paper2D.lib"
 /OUT:"D:\Miscelanea\Procedural2DMapGenerator\UnrealTestProject\Plugins\Procedural2DMapGenerator\Binaries\Win64\UE4Editor-Procedural2DMapGenerator-0003.dll"
 /IMPLIB:"D:\Miscelanea\Procedural2DMapGenerator\UnrealTestProject\Plugins\Procedural2DMapGenerator\Intermediate\Build\Win64\UE4Editor\Development\Procedural2DMapGenerator\UE4Editor-Procedural2DMapGenerator-0003.suppressed.lib"
 /PDB:"D:\Miscelanea\Procedural2DMapGenerator\UnrealTestProject\Plugins\Procedural2DMapGenerator\Binaries\Win64\UE4Editor-Procedural2DMapGenerator-0003.pdb"

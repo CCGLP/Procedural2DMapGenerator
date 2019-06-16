@@ -22,6 +22,21 @@
 *	https://wiki.unrealengine.com/Custom_Blueprint_Node_Creation
 */
 
+
+USTRUCT(BlueprintType)
+struct FCellularProbability {
+	GENERATED_BODY()
+
+		UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Cellular Probability Struct")
+		int neighbourTile;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Cellular Probability Struct")
+		int minNumberOfTilesToTransform;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Cellular Probability Struct")
+		int maxNumberOfTilesToTransform;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Cellular Probability Struct")
+		int tileToTransform;
+};
+
 UCLASS()
 class UProcedural2DMapGeneratorBPLibrary : public UBlueprintFunctionLibrary
 {
@@ -31,6 +46,21 @@ class UProcedural2DMapGeneratorBPLibrary : public UBlueprintFunctionLibrary
 	static float Procedural2DMapGeneratorSampleFunction(float Param, float Param1);
 
 	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Create DrunkardWalkMap", Keywords = "Drunkard Walk Algorithm"), Category = "Procedural2DMapGeneratorTesting")
-	static void Procedural2DMapGeneratorGetDrunkardMap(UPaperTileMapComponent* Actor);
+	static void Procedural2DMapGeneratorGetDrunkardMap(UPaperTileMapComponent* tileMap, int layerFloor, int layerCollision, FPaperTileInfo collision, FPaperTileInfo floor, int iterations = 10000);
+
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Create BSPDungeon ", Keywords = "BSP Dungeon Algorithm"), Category = "Procedural2DMapGeneratorTesting")
+	static void Procedural2DMapGeneratorGetBSPDungeonMap(UPaperTileMapComponent* tileMap, int layerFloor, int layerCollision, FPaperTileInfo collision, FPaperTileInfo floor, int minRooms = 10, int maxRooms = 100, int minWidth=1, int minHeight = 1);
+	
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Create Simple Dungeon ", Keywords = "Simple Dungeon Algorithm"), Category = "Procedural2DMapGeneratorTesting")
+	static void Procedural2DMapGeneratorGetSimpleDungeonMap(UPaperTileMapComponent* tileMap, int layerFloor, int layerCollision, FPaperTileInfo collision, FPaperTileInfo floor, int tries = 100, int extraCorridors = 100, int minWidth=1, int minHeight = 1, int maxWidth = 100, int maxHeight = 100);
+	
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Create Line Map ", Keywords = "Line Map Algorithm"), Category = "Procedural2DMapGeneratorTesting")
+	static void Procedural2DMapGeneratorGetLineMap(UPaperTileMapComponent* tileMap, int layerFloor, int layerCollision, FPaperTileInfo collision, FPaperTileInfo floor, int extraLines = 10, int branchQuantity = 100, int branchLength = 300);
+
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Create Cellular Automata Map ", Keywords = "Cellular Automata algorithm"), Category = "Procedural2DMapGeneratorTesting")
+	static void Procedural2DMapGeneratorGetCellularMap(UPaperTileMapComponent* tileMap, int layerFloor, int layerCollision, FPaperTileInfo collision, FPaperTileInfo floor, TArray<FCellularProbability> probs, int iterations = 3, int numberOfTiles = 2);
+
 
 };
+
+

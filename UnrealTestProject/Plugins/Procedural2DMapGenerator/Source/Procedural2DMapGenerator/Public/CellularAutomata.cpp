@@ -12,6 +12,7 @@ CellularAutomata::CellularAutomata()
 {
 	numberOfTiles = 2; 
 	this->iterations = 3;
+	configuration = new CellularAutomataConfiguration(); 
 }
 
 /**
@@ -24,13 +25,19 @@ CellularAutomata::CellularAutomata(int numberOfTiles, int iterations)
 	this->iterations = iterations; 
 }
 
+CellularAutomata::~CellularAutomata()
+{
+	delete configuration; 
+	configuration = nullptr; 
+}
+
 /**
  * @brief adds one probability to the actual configuration
  *
  */
 void CellularAutomata::addProbability(CellularProbability probability)
 {
-	configuration.cellularProbabilities.push_back(probability); 
+	configuration->addProbability(probability); 
 }
 
 /**
@@ -66,14 +73,13 @@ void CellularAutomata::generate(Area* area)
 {
 	RandomNoise noise = RandomNoise(numberOfTiles); 
 	noise.generate(area); 
-
 	for (int i = 0; i < iterations; i++) {
 		int** copy = area->getTileInfoCopy(); 
 		for (int x = 0; x < area->width; x++) {
 			for (int y = 0; y < area->height; y++) {
 				int* neighbours = getNeighbourInfo(area, x, y); 
-				for (int j = 0; j < configuration.cellularProbabilities.size(); j++) {
-					CellularProbability prob = configuration.cellularProbabilities[j];
+				for (int j = 0; j < configuration->probabilitiesSize; j++) {
+					CellularProbability prob = configuration->probabilities[j];
 					if (neighbours[prob.neighbourTile] <= prob.maxNumberOfTilesToTransform && neighbours[prob.neighbourTile] >= prob.minNumberOfTilesToTransform) {
 						copy[x][y] = prob.tileToTransform; 
 						break; 
@@ -99,6 +105,5 @@ void CellularAutomata::generate(Area* area)
 void CellularAutomata::configure(void* data)
 {
 	CellularAutomataConfiguration* newConfig = (CellularAutomataConfiguration*)data;
-	configuration.cellularProbabilities = newConfig->cellularProbabilities; 
-	delete newConfig; 
+	configuration = newConfig; 
 }
