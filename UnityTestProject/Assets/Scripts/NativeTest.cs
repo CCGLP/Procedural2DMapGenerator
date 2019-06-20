@@ -18,17 +18,17 @@ public class NativeTest : MonoBehaviour
 
         var watch = Stopwatch.StartNew();
 
-      
-        var testMap = GenerateAreaDrunkardWalk();
-        watch.Stop();
 
-        UnityEngine.Debug.Log("Time creating C# test map: " + watch.ElapsedMilliseconds);
+        //var testMap = GenerateAreaDrunkardWalk();
+        //watch.Stop();
 
-        watch.Reset();
-        watch.Start();
-        testMap = Procedural2DHelper.CreateDrunkardWalkArea(1000, 1000, 0, 0, 100000);
-        watch.Stop();
-        UnityEngine.Debug.Log("Time creating C++ test map: " + watch.ElapsedMilliseconds);
+        //UnityEngine.Debug.Log("Time creating C# test map: " + watch.ElapsedMilliseconds);
+
+        //watch.Reset();
+        //watch.Start();
+        //testMap = Procedural2DHelper.CreateDrunkardWalkArea(1000, 1000, 0, 0, 100000);
+        //watch.Stop();
+        //UnityEngine.Debug.Log("Time creating C++ test map: " + watch.ElapsedMilliseconds);
 
 
 
@@ -37,7 +37,7 @@ public class NativeTest : MonoBehaviour
         watch.Reset();
         watch.Start();
       
-        var map = Procedural2DHelper.CreateLineMapArea(1000, 1000, 0, 0,100,500,500); 
+        var map = Procedural2DHelper.CreateBSPDungeonArea(100 , 100, 0, 0,10,100,1,1); 
         watch.Stop();
         UnityEngine.Debug.Log("Time elapsed creating map: " + watch.ElapsedMilliseconds);
 
