@@ -88,8 +88,6 @@
     <PostBuildEvent>
       <Command>xcopy /y "..\$(IntDir)Procedural2DGenerator++.dll" "..\TestAppCpp"
 xcopy /y "..\$(IntDir)Procedural2DGenerator++.dll" "..\..\..\UnityTestProject\Assets\Plugins"
-xcopy /y "..\..\..\code\cpp\*" "..\..\..\UnrealTestProject\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public"
-xcopy /y "..\..\..\headers\*" "..\..\..\UnrealTestProject\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public"
 </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>

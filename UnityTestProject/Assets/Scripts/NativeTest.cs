@@ -14,26 +14,26 @@ public class NativeTest : MonoBehaviour
     private void Start()
     {
 
-        // BENCHMARK************************************************************************
+        //BENCHMARK************************************************************************
 
-        var watch = Stopwatch.StartNew();
-
-
-        //var testMap = GenerateAreaDrunkardWalk();
-        //watch.Stop();
-
-        //UnityEngine.Debug.Log("Time creating C# test map: " + watch.ElapsedMilliseconds);
-
-        //watch.Reset();
-        //watch.Start();
-        //testMap = Procedural2DHelper.CreateDrunkardWalkArea(1000, 1000, 0, 0, 100000);
-        //watch.Stop();
-        //UnityEngine.Debug.Log("Time creating C++ test map: " + watch.ElapsedMilliseconds);
+       var watch = Stopwatch.StartNew();
 
 
+        var testMap = GenerateAreaDrunkardWalk();
+        watch.Stop();
+
+        UnityEngine.Debug.Log("Time creating C# test map: " + watch.ElapsedMilliseconds);
+
+        watch.Reset();
+        watch.Start();
+        testMap = Procedural2DHelper.CreateDrunkardWalkArea(1000, 1000, 0, 0, 100000);
+        watch.Stop();
+        UnityEngine.Debug.Log("Time creating C++ test map: " + watch.ElapsedMilliseconds);
 
 
-        //Actual map creation ***************************************************************
+
+
+        //Actual map creation***************************************************************
         watch.Reset();
         watch.Start();
       
