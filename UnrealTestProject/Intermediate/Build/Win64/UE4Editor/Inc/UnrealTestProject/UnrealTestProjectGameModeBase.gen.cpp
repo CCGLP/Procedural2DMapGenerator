@@ -1,4 +1,4 @@
-// Copyright 1998-2019 Epic Games, Inc. All Rights Reserved.
+// Copyright Epic Games, Inc. All Rights Reserved.
 /*===========================================================================
 	Generated code exported from UnrealHeaderTool.
 	DO NOT modify this manually! Edit the corresponding .h files instead!
@@ -40,6 +40,7 @@ void EmptyLinkFunctionForGeneratedCodeUnrealTestProjectGameModeBase() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUnrealTestProjectGameModeBase_Statics::Class_MetaDataParams[] = {
+		{ "Comment", "/**\n * \n */" },
 		{ "HideCategories", "Info Rendering MovementReplication Replication Actor Input Movement Collision Rendering Utilities|Transformation" },
 		{ "IncludePath", "UnrealTestProjectGameModeBase.h" },
 		{ "ModuleRelativePath", "UnrealTestProjectGameModeBase.h" },
@@ -51,18 +52,18 @@ void EmptyLinkFunctionForGeneratedCodeUnrealTestProjectGameModeBase() {}
 	};
 	const UE4CodeGen_Private::FClassParams Z_Construct_UClass_AUnrealTestProjectGameModeBase_Statics::ClassParams = {
 		&AUnrealTestProjectGameModeBase::StaticClass,
-		nullptr,
+		"Game",
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		nullptr,
 		nullptr,
 		nullptr,
-		ARRAY_COUNT(DependentSingletons),
+		UE_ARRAY_COUNT(DependentSingletons),
 		0,
 		0,
 		0,
-		0x009002A8u,
-		METADATA_PARAMS(Z_Construct_UClass_AUnrealTestProjectGameModeBase_Statics::Class_MetaDataParams, ARRAY_COUNT(Z_Construct_UClass_AUnrealTestProjectGameModeBase_Statics::Class_MetaDataParams))
+		0x009002ACu,
+		METADATA_PARAMS(Z_Construct_UClass_AUnrealTestProjectGameModeBase_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_AUnrealTestProjectGameModeBase_Statics::Class_MetaDataParams))
 	};
 	UClass* Z_Construct_UClass_AUnrealTestProjectGameModeBase()
 	{
@@ -73,7 +74,7 @@ void EmptyLinkFunctionForGeneratedCodeUnrealTestProjectGameModeBase() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AUnrealTestProjectGameModeBase, 3987754292);
+	IMPLEMENT_CLASS(AUnrealTestProjectGameModeBase, 3098718009);
 	template<> UNREALTESTPROJECT_API UClass* StaticClass<AUnrealTestProjectGameModeBase>()
 	{
 		return AUnrealTestProjectGameModeBase::StaticClass();

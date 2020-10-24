@@ -1,7 +1,7 @@
 {
-	"BuildId": "5660361",
+	"BuildId": "14510773",
 	"Modules": 
 	{
-		"Procedural2DMapGenerator": "UE4Editor-Procedural2DMapGenerator-0014.dll"
+		"Procedural2DMapGenerator": "UE4Editor-Procedural2DMapGenerator.dll"
 	}
 }

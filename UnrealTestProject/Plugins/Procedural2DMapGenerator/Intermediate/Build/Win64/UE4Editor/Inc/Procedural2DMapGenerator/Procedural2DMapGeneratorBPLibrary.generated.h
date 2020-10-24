@@ -1,4 +1,4 @@
-// Copyright 1998-2019 Epic Games, Inc. All Rights Reserved.
+// Copyright Epic Games, Inc. All Rights Reserved.
 /*===========================================================================
 	Generated code exported from UnrealHeaderTool.
 	DO NOT modify this manually! Edit the corresponding .h files instead!
@@ -23,194 +23,25 @@ struct FCellularProbability;
 
 template<> PROCEDURAL2DMAPGENERATOR_API UScriptStruct* StaticStruct<struct FCellularProbability>();
 
+#define UnrealTestProject_Plugins_Procedural2DMapGenerator_Source_Procedural2DMapGenerator_Public_Procedural2DMapGeneratorBPLibrary_h_43_SPARSE_DATA
 #define UnrealTestProject_Plugins_Procedural2DMapGenerator_Source_Procedural2DMapGenerator_Public_Procedural2DMapGeneratorBPLibrary_h_43_RPC_WRAPPERS \
  \
-	DECLARE_FUNCTION(execProcedural2DMapGeneratorGetCellularMap) \
-	{ \
-		P_GET_OBJECT(UPaperTileMapComponent,Z_Param_tileMap); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_layerFloor); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_layerCollision); \
-		P_GET_STRUCT(FPaperTileInfo,Z_Param_collision); \
-		P_GET_STRUCT(FPaperTileInfo,Z_Param_floor); \
-		P_GET_TARRAY(FCellularProbability,Z_Param_probs); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_iterations); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_numberOfTiles); \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		UProcedural2DMapGeneratorBPLibrary::Procedural2DMapGeneratorGetCellularMap(Z_Param_tileMap,Z_Param_layerFloor,Z_Param_layerCollision,Z_Param_collision,Z_Param_floor,Z_Param_probs,Z_Param_iterations,Z_Param_numberOfTiles); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execProcedural2DMapGeneratorGetLineMap) \
-	{ \
-		P_GET_OBJECT(UPaperTileMapComponent,Z_Param_tileMap); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_layerFloor); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_layerCollision); \
-		P_GET_STRUCT(FPaperTileInfo,Z_Param_collision); \
-		P_GET_STRUCT(FPaperTileInfo,Z_Param_floor); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_extraLines); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_branchQuantity); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_branchLength); \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		UProcedural2DMapGeneratorBPLibrary::Procedural2DMapGeneratorGetLineMap(Z_Param_tileMap,Z_Param_layerFloor,Z_Param_layerCollision,Z_Param_collision,Z_Param_floor,Z_Param_extraLines,Z_Param_branchQuantity,Z_Param_branchLength); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execProcedural2DMapGeneratorGetSimpleDungeonMap) \
-	{ \
-		P_GET_OBJECT(UPaperTileMapComponent,Z_Param_tileMap); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_layerFloor); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_layerCollision); \
-		P_GET_STRUCT(FPaperTileInfo,Z_Param_collision); \
-		P_GET_STRUCT(FPaperTileInfo,Z_Param_floor); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_tries); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_extraCorridors); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_minWidth); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_minHeight); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_maxWidth); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_maxHeight); \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		UProcedural2DMapGeneratorBPLibrary::Procedural2DMapGeneratorGetSimpleDungeonMap(Z_Param_tileMap,Z_Param_layerFloor,Z_Param_layerCollision,Z_Param_collision,Z_Param_floor,Z_Param_tries,Z_Param_extraCorridors,Z_Param_minWidth,Z_Param_minHeight,Z_Param_maxWidth,Z_Param_maxHeight); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execProcedural2DMapGeneratorGetBSPDungeonMap) \
-	{ \
-		P_GET_OBJECT(UPaperTileMapComponent,Z_Param_tileMap); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_layerFloor); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_layerCollision); \
-		P_GET_STRUCT(FPaperTileInfo,Z_Param_collision); \
-		P_GET_STRUCT(FPaperTileInfo,Z_Param_floor); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_minRooms); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_maxRooms); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_minWidth); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_minHeight); \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		UProcedural2DMapGeneratorBPLibrary::Procedural2DMapGeneratorGetBSPDungeonMap(Z_Param_tileMap,Z_Param_layerFloor,Z_Param_layerCollision,Z_Param_collision,Z_Param_floor,Z_Param_minRooms,Z_Param_maxRooms,Z_Param_minWidth,Z_Param_minHeight); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execProcedural2DMapGeneratorGetDrunkardMap) \
-	{ \
-		P_GET_OBJECT(UPaperTileMapComponent,Z_Param_tileMap); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_layerFloor); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_layerCollision); \
-		P_GET_STRUCT(FPaperTileInfo,Z_Param_collision); \
-		P_GET_STRUCT(FPaperTileInfo,Z_Param_floor); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_iterations); \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		UProcedural2DMapGeneratorBPLibrary::Procedural2DMapGeneratorGetDrunkardMap(Z_Param_tileMap,Z_Param_layerFloor,Z_Param_layerCollision,Z_Param_collision,Z_Param_floor,Z_Param_iterations); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execProcedural2DMapGeneratorSampleFunction) \
-	{ \
-		P_GET_PROPERTY(UFloatProperty,Z_Param_Param); \
-		P_GET_PROPERTY(UFloatProperty,Z_Param_Param1); \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		*(float*)Z_Param__Result=UProcedural2DMapGeneratorBPLibrary::Procedural2DMapGeneratorSampleFunction(Z_Param_Param,Z_Param_Param1); \
-		P_NATIVE_END; \
-	}
+	DECLARE_FUNCTION(execProcedural2DMapGeneratorGetCellularMap); \
+	DECLARE_FUNCTION(execProcedural2DMapGeneratorGetLineMap); \
+	DECLARE_FUNCTION(execProcedural2DMapGeneratorGetSimpleDungeonMap); \
+	DECLARE_FUNCTION(execProcedural2DMapGeneratorGetBSPDungeonMap); \
+	DECLARE_FUNCTION(execProcedural2DMapGeneratorGetDrunkardMap); \
+	DECLARE_FUNCTION(execProcedural2DMapGeneratorSampleFunction);
 
 
 #define UnrealTestProject_Plugins_Procedural2DMapGenerator_Source_Procedural2DMapGenerator_Public_Procedural2DMapGeneratorBPLibrary_h_43_RPC_WRAPPERS_NO_PURE_DECLS \
  \
-	DECLARE_FUNCTION(execProcedural2DMapGeneratorGetCellularMap) \
-	{ \
-		P_GET_OBJECT(UPaperTileMapComponent,Z_Param_tileMap); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_layerFloor); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_layerCollision); \
-		P_GET_STRUCT(FPaperTileInfo,Z_Param_collision); \
-		P_GET_STRUCT(FPaperTileInfo,Z_Param_floor); \
-		P_GET_TARRAY(FCellularProbability,Z_Param_probs); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_iterations); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_numberOfTiles); \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		UProcedural2DMapGeneratorBPLibrary::Procedural2DMapGeneratorGetCellularMap(Z_Param_tileMap,Z_Param_layerFloor,Z_Param_layerCollision,Z_Param_collision,Z_Param_floor,Z_Param_probs,Z_Param_iterations,Z_Param_numberOfTiles); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execProcedural2DMapGeneratorGetLineMap) \
-	{ \
-		P_GET_OBJECT(UPaperTileMapComponent,Z_Param_tileMap); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_layerFloor); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_layerCollision); \
-		P_GET_STRUCT(FPaperTileInfo,Z_Param_collision); \
-		P_GET_STRUCT(FPaperTileInfo,Z_Param_floor); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_extraLines); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_branchQuantity); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_branchLength); \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		UProcedural2DMapGeneratorBPLibrary::Procedural2DMapGeneratorGetLineMap(Z_Param_tileMap,Z_Param_layerFloor,Z_Param_layerCollision,Z_Param_collision,Z_Param_floor,Z_Param_extraLines,Z_Param_branchQuantity,Z_Param_branchLength); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execProcedural2DMapGeneratorGetSimpleDungeonMap) \
-	{ \
-		P_GET_OBJECT(UPaperTileMapComponent,Z_Param_tileMap); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_layerFloor); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_layerCollision); \
-		P_GET_STRUCT(FPaperTileInfo,Z_Param_collision); \
-		P_GET_STRUCT(FPaperTileInfo,Z_Param_floor); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_tries); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_extraCorridors); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_minWidth); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_minHeight); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_maxWidth); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_maxHeight); \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		UProcedural2DMapGeneratorBPLibrary::Procedural2DMapGeneratorGetSimpleDungeonMap(Z_Param_tileMap,Z_Param_layerFloor,Z_Param_layerCollision,Z_Param_collision,Z_Param_floor,Z_Param_tries,Z_Param_extraCorridors,Z_Param_minWidth,Z_Param_minHeight,Z_Param_maxWidth,Z_Param_maxHeight); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execProcedural2DMapGeneratorGetBSPDungeonMap) \
-	{ \
-		P_GET_OBJECT(UPaperTileMapComponent,Z_Param_tileMap); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_layerFloor); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_layerCollision); \
-		P_GET_STRUCT(FPaperTileInfo,Z_Param_collision); \
-		P_GET_STRUCT(FPaperTileInfo,Z_Param_floor); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_minRooms); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_maxRooms); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_minWidth); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_minHeight); \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		UProcedural2DMapGeneratorBPLibrary::Procedural2DMapGeneratorGetBSPDungeonMap(Z_Param_tileMap,Z_Param_layerFloor,Z_Param_layerCollision,Z_Param_collision,Z_Param_floor,Z_Param_minRooms,Z_Param_maxRooms,Z_Param_minWidth,Z_Param_minHeight); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execProcedural2DMapGeneratorGetDrunkardMap) \
-	{ \
-		P_GET_OBJECT(UPaperTileMapComponent,Z_Param_tileMap); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_layerFloor); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_layerCollision); \
-		P_GET_STRUCT(FPaperTileInfo,Z_Param_collision); \
-		P_GET_STRUCT(FPaperTileInfo,Z_Param_floor); \
-		P_GET_PROPERTY(UIntProperty,Z_Param_iterations); \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		UProcedural2DMapGeneratorBPLibrary::Procedural2DMapGeneratorGetDrunkardMap(Z_Param_tileMap,Z_Param_layerFloor,Z_Param_layerCollision,Z_Param_collision,Z_Param_floor,Z_Param_iterations); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execProcedural2DMapGeneratorSampleFunction) \
-	{ \
-		P_GET_PROPERTY(UFloatProperty,Z_Param_Param); \
-		P_GET_PROPERTY(UFloatProperty,Z_Param_Param1); \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		*(float*)Z_Param__Result=UProcedural2DMapGeneratorBPLibrary::Procedural2DMapGeneratorSampleFunction(Z_Param_Param,Z_Param_Param1); \
-		P_NATIVE_END; \
-	}
+	DECLARE_FUNCTION(execProcedural2DMapGeneratorGetCellularMap); \
+	DECLARE_FUNCTION(execProcedural2DMapGeneratorGetLineMap); \
+	DECLARE_FUNCTION(execProcedural2DMapGeneratorGetSimpleDungeonMap); \
+	DECLARE_FUNCTION(execProcedural2DMapGeneratorGetBSPDungeonMap); \
+	DECLARE_FUNCTION(execProcedural2DMapGeneratorGetDrunkardMap); \
+	DECLARE_FUNCTION(execProcedural2DMapGeneratorSampleFunction);
 
 
 #define UnrealTestProject_Plugins_Procedural2DMapGenerator_Source_Procedural2DMapGenerator_Public_Procedural2DMapGeneratorBPLibrary_h_43_INCLASS_NO_PURE_DECLS \
@@ -263,6 +94,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UProcedural2DMapGeneratorBPLibrary); \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	UnrealTestProject_Plugins_Procedural2DMapGenerator_Source_Procedural2DMapGenerator_Public_Procedural2DMapGeneratorBPLibrary_h_43_PRIVATE_PROPERTY_OFFSET \
+	UnrealTestProject_Plugins_Procedural2DMapGenerator_Source_Procedural2DMapGenerator_Public_Procedural2DMapGeneratorBPLibrary_h_43_SPARSE_DATA \
 	UnrealTestProject_Plugins_Procedural2DMapGenerator_Source_Procedural2DMapGenerator_Public_Procedural2DMapGeneratorBPLibrary_h_43_RPC_WRAPPERS \
 	UnrealTestProject_Plugins_Procedural2DMapGenerator_Source_Procedural2DMapGenerator_Public_Procedural2DMapGeneratorBPLibrary_h_43_INCLASS \
 	UnrealTestProject_Plugins_Procedural2DMapGenerator_Source_Procedural2DMapGenerator_Public_Procedural2DMapGeneratorBPLibrary_h_43_STANDARD_CONSTRUCTORS \
@@ -274,6 +106,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	UnrealTestProject_Plugins_Procedural2DMapGenerator_Source_Procedural2DMapGenerator_Public_Procedural2DMapGeneratorBPLibrary_h_43_PRIVATE_PROPERTY_OFFSET \
+	UnrealTestProject_Plugins_Procedural2DMapGenerator_Source_Procedural2DMapGenerator_Public_Procedural2DMapGeneratorBPLibrary_h_43_SPARSE_DATA \
 	UnrealTestProject_Plugins_Procedural2DMapGenerator_Source_Procedural2DMapGenerator_Public_Procedural2DMapGeneratorBPLibrary_h_43_RPC_WRAPPERS_NO_PURE_DECLS \
 	UnrealTestProject_Plugins_Procedural2DMapGenerator_Source_Procedural2DMapGenerator_Public_Procedural2DMapGeneratorBPLibrary_h_43_INCLASS_NO_PURE_DECLS \
 	UnrealTestProject_Plugins_Procedural2DMapGenerator_Source_Procedural2DMapGenerator_Public_Procedural2DMapGeneratorBPLibrary_h_43_ENHANCED_CONSTRUCTORS \

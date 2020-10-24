@@ -1,0 +1,9 @@
+{
+	"SourceFiles": [
+		"B:\\Proyectos\\Procedural2DMapGenerator\\UnrealTestProject\\Source\\UnrealTestProject\\UnrealTestProject.Build.cs",
+		"B:\\Proyectos\\Procedural2DMapGenerator\\UnrealTestProject\\Plugins\\Procedural2DMapGenerator\\Source\\Procedural2DMapGenerator\\Procedural2DMapGenerator.Build.cs",
+		"B:\\Proyectos\\Procedural2DMapGenerator\\UnrealTestProject\\Source\\UnrealTestProject.Target.cs",
+		"B:\\Proyectos\\Procedural2DMapGenerator\\UnrealTestProject\\Source\\UnrealTestProjectEditor.Target.cs"
+	],
+	"EngineVersion": "4.26.0"
+}
