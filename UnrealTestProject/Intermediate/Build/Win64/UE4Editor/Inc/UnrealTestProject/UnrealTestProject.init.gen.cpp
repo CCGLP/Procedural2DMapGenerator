@@ -1,4 +1,4 @@
-// Copyright 1998-2019 Epic Games, Inc. All Rights Reserved.
+// Copyright Epic Games, Inc. All Rights Reserved.
 /*===========================================================================
 	Generated code exported from UnrealHeaderTool.
 	DO NOT modify this manually! Edit the corresponding .h files instead!
@@ -21,7 +21,7 @@ void EmptyLinkFunctionForGeneratedCodeUnrealTestProject_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0xD6E185E7,
+				0x00C71248,
 				0x4FCD3717,
 				METADATA_PARAMS(nullptr, 0)
 			};

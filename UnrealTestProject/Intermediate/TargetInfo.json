@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "UnrealTestProject",
+			"Path": "B:\\Proyectos\\Procedural2DMapGenerator\\UnrealTestProject\\Source\\UnrealTestProject.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "UnrealTestProjectEditor",
+			"Path": "B:\\Proyectos\\Procedural2DMapGenerator\\UnrealTestProject\\Source\\UnrealTestProjectEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\UnrealTestProject.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{AD0EEC86-3960-49DC-87B5-0E9F56C4F0F4}</UniqueIdentifier>
+      <UniqueIdentifier>{30DBF6A4-F17E-4C38-81A6-38ADFAF25F26}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\UnrealTestProject.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{C5E48265-1089-4791-9D30-6B30C1AADE3A}</UniqueIdentifier>
+      <UniqueIdentifier>{E7AFC929-706C-4F06-8601-1F6D6E8EE05D}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -24,22 +24,22 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Plugins">
-      <UniqueIdentifier>{008F26D4-8D5D-43EC-B00E-42841DD7B38B}</UniqueIdentifier>
+      <UniqueIdentifier>{643E2125-B2DB-48A3-BFC6-0A72BC11E502}</UniqueIdentifier>
     </Filter>
     <Filter Include="Plugins\Procedural2DMapGenerator">
-      <UniqueIdentifier>{44C0573F-0C0B-4755-B8C4-6937103AE05E}</UniqueIdentifier>
+      <UniqueIdentifier>{0FF1A03C-F100-4671-9FEA-104C190E8600}</UniqueIdentifier>
     </Filter>
     <Filter Include="Plugins\Procedural2DMapGenerator\Source">
-      <UniqueIdentifier>{ED9A9B50-F40C-4C95-9E41-A4DB3F356418}</UniqueIdentifier>
+      <UniqueIdentifier>{B98B7A10-6FFB-4840-B302-CFE1BBBE70D8}</UniqueIdentifier>
     </Filter>
     <Filter Include="Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator">
-      <UniqueIdentifier>{3D1D41AE-E156-4BCE-AAC0-D88998010BAE}</UniqueIdentifier>
+      <UniqueIdentifier>{A959E65B-01A1-4E1C-9A9A-2303A82A3444}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Procedural2DMapGenerator.Build.cs">
       <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator</Filter>
     </None>
     <Filter Include="Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Private">
-      <UniqueIdentifier>{E8AB88AF-34BB-4876-BA54-E5BFC8E7DABA}</UniqueIdentifier>
+      <UniqueIdentifier>{8FD83BD0-C1B1-44F0-AAD6-4509EE60002C}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Private\Procedural2DMapGenerator.cpp">
       <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Private</Filter>
@@ -48,25 +48,85 @@
       <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Private</Filter>
     </ClCompile>
     <Filter Include="Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public">
-      <UniqueIdentifier>{09913B15-1728-4D40-8BF1-4C55A0F4DCAB}</UniqueIdentifier>
+      <UniqueIdentifier>{1200B076-A9F2-4C1B-B47D-93A13F32C908}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\Area.cpp">
+      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
+    </ClCompile>
+    <None Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\Area.hpp">
+      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
+    </None>
+    <ClCompile Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\BSPDungeon.cpp">
+      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
+    </ClCompile>
+    <None Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\BSPDungeon.hpp">
+      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
+    </None>
+    <ClCompile Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\CellularAutomata.cpp">
+      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
+    </ClCompile>
+    <None Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\CellularAutomata.hpp">
+      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
+    </None>
+    <ClCompile Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\CorridorGeneration.cpp">
+      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
+    </ClCompile>
+    <None Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\CorridorGeneration.hpp">
+      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
+    </None>
+    <ClCompile Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\DLLEntry.cpp">
+      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\DLLEntry.h">
+      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\DrunkardWalk.cpp">
+      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
+    </ClCompile>
+    <None Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\DrunkardWalk.hpp">
+      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
+    </None>
+    <ClCompile Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\Generator.cpp">
+      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
+    </ClCompile>
+    <None Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\Generator.hpp">
+      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
+    </None>
+    <ClCompile Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\LineMap.cpp">
+      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
+    </ClCompile>
+    <None Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\LineMap.hpp">
+      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
+    </None>
     <ClInclude Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\Procedural2DMapGenerator.h">
       <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\Procedural2DMapGeneratorBPLibrary.h">
       <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\RandomNoise.cpp">
+      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
+    </ClCompile>
+    <None Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\RandomNoise.hpp">
+      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
+    </None>
+    <ClCompile Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\SimpleDungeon.cpp">
+      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
+    </ClCompile>
+    <None Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\SimpleDungeon.hpp">
+      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
+    </None>
     <None Include="..\..\Plugins\Procedural2DMapGenerator\Procedural2DMapGenerator.uplugin">
       <Filter>Plugins\Procedural2DMapGenerator</Filter>
     </None>
     <Filter Include="Plugins\Procedural2DMapGenerator\Resources">
-      <UniqueIdentifier>{5FEF5855-41B6-4C8C-9F30-D61C5846F43B}</UniqueIdentifier>
+      <UniqueIdentifier>{35CAD6F0-2086-4D48-BFEE-8B7924670FA8}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Plugins\Procedural2DMapGenerator\Resources\Icon128.png">
       <Filter>Plugins\Procedural2DMapGenerator\Resources</Filter>
     </None>
     <Filter Include="Source\UnrealTestProject">
-      <UniqueIdentifier>{E1E176ED-332A-4D6F-AFBA-95E377C09685}</UniqueIdentifier>
+      <UniqueIdentifier>{72B1FD8D-BF33-41AD-9EEA-1392ECD3DC53}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\UnrealTestProject\UnrealTestProject.Build.cs">
       <Filter>Source\UnrealTestProject</Filter>
@@ -82,70 +142,6 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\UnrealTestProject\UnrealTestProjectGameModeBase.h">
       <Filter>Source\UnrealTestProject</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\Area.cpp">
-      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\BSPDungeon.cpp">
-      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\CellularAutomata.cpp">
-      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\CorridorGeneration.cpp">
-      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\DLLEntry.cpp">
-      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\DrunkardWalk.cpp">
-      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\Generator.cpp">
-      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\LineMap.cpp">
-      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\RandomNoise.cpp">
-      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\SimpleDungeon.cpp">
-      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\Area.hpp">
-      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\BSPDungeon.hpp">
-      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\CellularAutomata.hpp">
-      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\CorridorGeneration.hpp">
-      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\DLLEntry.h">
-      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\DrunkardWalk.hpp">
-      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\Generator.hpp">
-      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\LineMap.hpp">
-      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\RandomNoise.hpp">
-      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public\SimpleDungeon.hpp">
-      <Filter>Plugins\Procedural2DMapGenerator\Source\Procedural2DMapGenerator\Public</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
